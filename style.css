@@ -229,6 +229,24 @@ input:checked + .slider:before { transform: translateX(20px); }
     font-weight: 400;
 }
 
+.translation-text {
+    margin-top: 6px;
+    padding: 8px 10px;
+    border-left: 3px solid #f0b429;
+    background: rgba(240, 180, 41, 0.08);
+    color: #56616a;
+    font-size: 0.94rem;
+    line-height: 1.55;
+    border-radius: 6px;
+}
+
+.option-translation-text {
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
 .translation-toggle-btn {
     align-self: flex-start;
     background: white;
@@ -258,6 +276,11 @@ input:checked + .slider:before { transform: translateX(20px); }
     text-align: left;
     transition: all 0.2s;
     color: var(--dark);
+}
+
+.option-btn .translation-text {
+    padding: 6px 8px;
+    font-size: 0.9rem;
 }
 
 .option-btn:hover:not([disabled]) { border-color: var(--primary); background: #f0f0ff; }
@@ -421,3 +444,17 @@ input:checked + .slider:before { transform: translateX(20px); }
 }
 .text-green { color: var(--success); font-weight: bold; }
 .text-red { color: var(--danger); font-weight: bold; }
+
+.option-btn .translation-text {
+  margin-top: 6px;
+  padding: 0;
+  border-left: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.option-btn:not(.correct):not(.wrong) .translation-text {
+  color: #6b7280;
+}

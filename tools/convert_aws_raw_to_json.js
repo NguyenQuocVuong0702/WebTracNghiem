@@ -229,20 +229,16 @@ function parseChoiceExplanations(lines, options, questionNumber) {
             correctIndices.push(currentIndex);
         }
 
-        let cleanedBody = body
-            .replace(/\bINCORRECT\b\s*[:.-]?\s*/i, '')
-            .replace(/\bCORRECT\b\s*[:.-]?\s*/i, '')
-            .replace(/SAI\s*[:.-]?\s*/i, '')
-            .replace(/ĐÚNG\s*[:.-]?\s*/i, '')
-            .trim();
+        const isVietnamese = /đúng|sai/i.test(line) && !/\bcorrect\b|\bincorrect\b/i.test(line);
+        const cleanedBody = cleanChoiceExplanationBody(
+            body,
+            options[currentIndex],
+            isCorrect,
+            isIncorrect,
+            isVietnamese
+        );
 
-        cleanedBody = cleanedBody.replace(/^["“][^"”]+["”]\s*(?:is\s*)?(?:incorrect|correct)?\.?\s*/i, '').trim();
-
-        if (!cleanedBody && (isCorrect || isIncorrect)) {
-            cleanedBody = isCorrect ? 'Correct.' : 'Incorrect.';
-        }
-
-        if (/đúng|sai/i.test(line) && !/\bcorrect\b|\bincorrect\b/i.test(line)) {
+        if (isVietnamese) {
             wrongExplain[currentIndex].vi = cleanedBody;
         } else {
             wrongExplain[currentIndex].en = cleanedBody;
@@ -261,6 +257,65 @@ function parseChoiceExplanations(lines, options, questionNumber) {
         wrongExplain,
         correctIndices: [...new Set(correctIndices)].sort((a, b) => a - b)
     };
+}
+
+function cleanChoiceExplanationBody(body, option, isCorrect, isIncorrect, isVietnamese) {
+    let cleaned = body
+        .replace(/^\s*\bINCORRECT\b\s*[:.-]?\s*/i, '')
+        .replace(/^\s*\bCORRECT\b\s*[:.-]?\s*/i, '')
+        .replace(/^\s*SAI\s*[:.-]?\s*/i, '')
+        .replace(/^\s*ĐÚNG\s*[:.-]?\s*/i, '')
+        .trim();
+
+    const quoted = (cleaned.match(/^["“]([^"”]+)["”]\s*(.*)$/) || [])[1];
+    const restAfterQuoted = (cleaned.match(/^["“][^"”]+["”]\s*(.*)$/) || [])[1] || '';
+    const optionText = quoted || (isVietnamese ? option.vi : option.en);
+
+    if (isVietnamese) {
+        let reason = restAfterQuoted
+            .replace(/^là đáp án đúng\.?\s*/i, '')
+            .replace(/^la dap an dung\.?\s*/i, '')
+            .replace(/^không đúng\.?\s*/i, '')
+            .replace(/^khong dung\.?\s*/i, '')
+            .replace(/^(?:Lý do|Ly do)\s*:\s*/i, '')
+            .trim();
+
+        if (isCorrect) {
+            return `Đúng. ${optionText} là đáp án đúng.`;
+        }
+
+        if (!reason) {
+            reason = cleaned
+                .replace(/^["“][^"”]+["”]\s*/i, '')
+                .replace(/^không đúng\.?\s*/i, '')
+                .replace(/^khong dung\.?\s*/i, '')
+                .replace(/^(?:Lý do|Ly do)\s*:\s*/i, '')
+                .trim();
+        }
+
+        return reason ? `Sai. ${reason}` : 'Sai.';
+    }
+
+    let reason = restAfterQuoted
+        .replace(/^is\s+incorrect\.?\s*/i, '')
+        .replace(/^is\s+not\s+correct\.?\s*/i, '')
+        .replace(/^is\s+the\s+correct\s+answer\.?\s*/i, '')
+        .replace(/^is\s+correct\.?\s*/i, '')
+        .trim();
+
+    if (isCorrect) {
+        return `Correct. ${optionText} is the correct answer.`;
+    }
+
+    if (!reason) {
+        reason = cleaned
+            .replace(/^["“][^"”]+["”]\s*/i, '')
+            .replace(/^is\s+incorrect\.?\s*/i, '')
+            .replace(/^is\s+not\s+correct\.?\s*/i, '')
+            .trim();
+    }
+
+    return reason ? `Incorrect. ${reason}` : 'Incorrect.';
 }
 
 function inferTopic(question, options) {
@@ -314,6 +369,10 @@ function parseQuestionBlock(block, fallbackId) {
 
     const answerLines = getInlineAndSection(lines, SECTION_PATTERNS.answer, [SECTION_PATTERNS.explanation, SECTION_PATTERNS.choicesExplanation, SECTION_PATTERNS.references]);
     const explainLines = getInlineAndSection(lines, SECTION_PATTERNS.explanation, [SECTION_PATTERNS.choicesExplanation, SECTION_PATTERNS.references]);
+    const choiceExplainHeaderLine = lines.find(line => SECTION_PATTERNS.choicesExplanation.test(line)) || '';
+    const inlineVietnameseExplanation = choiceExplainHeaderLine
+        ? stripSectionPrefix(choiceExplainHeaderLine, SECTION_PATTERNS.choicesExplanation)
+        : '';
     const choiceExplainLines = getSection(lines, SECTION_PATTERNS.choicesExplanation, [SECTION_PATTERNS.references]);
     const referenceLines = getInlineAndSection(lines, SECTION_PATTERNS.references, []);
 
@@ -341,6 +400,9 @@ function parseQuestionBlock(block, fallbackId) {
     const isMultiByPrompt = /\((select|choose)\s+(two|three|four|five|six|2|3|4|5|6)\.?\)/i.test(question.en);
     const answer = answerIndices.length > 1 || isMultiByPrompt ? answerIndices : answerIndices[0];
     const explain = splitBilingualBlock(explainLines);
+    if (!explain.vi && inlineVietnameseExplanation) {
+        explain.vi = inlineVietnameseExplanation;
+    }
     const refs = extractUrls(referenceLines);
 
     return {

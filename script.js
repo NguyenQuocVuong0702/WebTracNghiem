@@ -59,6 +59,13 @@ function getLocalizedText(value, lang = getCurrentLanguage()) {
     return value.en || value.vi || '';
 }
 
+function areSameLocalizedText(left, right) {
+    return (
+        getLocalizedText(left, 'en').trim() === getLocalizedText(right, 'en').trim() &&
+        getLocalizedText(left, 'vi').trim() === getLocalizedText(right, 'vi').trim()
+    );
+}
+
 function appendLocalizedText(parent, value, lang = getCurrentLanguage()) {
     if (isLocalizedText(value) && lang === 'both') {
         const en = document.createElement('div');
@@ -68,7 +75,7 @@ function appendLocalizedText(parent, value, lang = getCurrentLanguage()) {
 
         if (value.vi) {
             const vi = document.createElement('div');
-            vi.className = 'lang-line lang-vi';
+            vi.className = 'lang-line lang-vi translation-text';
             vi.textContent = value.vi;
             parent.appendChild(vi);
         }
@@ -94,6 +101,27 @@ function getAnswerDisplayText(value, lang = getCurrentLanguage()) {
 
 function appendAnswerText(parent, value, lang = getCurrentLanguage()) {
     parent.textContent = getAnswerDisplayText(value, lang);
+}
+
+function appendChoiceExplanationLabel(parent, option, isCorrectChoice, lang = getCurrentLanguage()) {
+    const statusEn = isCorrectChoice ? 'Correct' : 'Incorrect';
+    const statusVi = isCorrectChoice ? 'Đúng' : 'Sai';
+
+    if (isLocalizedText(option) && lang === 'both') {
+        const en = document.createElement('div');
+        en.className = 'lang-line lang-en';
+        en.textContent = `${getLocalizedText(option, 'en')} (${statusEn})`;
+        parent.appendChild(en);
+
+        const vi = document.createElement('div');
+        vi.className = 'lang-line lang-vi option-translation-text';
+        vi.textContent = `${getLocalizedText(option, 'vi')} (${statusVi})`;
+        parent.appendChild(vi);
+        return;
+    }
+
+    const status = lang === 'vi' ? statusVi : statusEn;
+    parent.textContent = `${getLocalizedText(option, lang)} (${status})`;
 }
 
 function updateTranslationToggle() {
@@ -663,7 +691,7 @@ function hasFullExplanationContent(question) {
     return !!(
         question &&
         (
-            question.fullExplain ||
+            (question.fullExplain && !areSameLocalizedText(question.fullExplain, question.explain)) ||
             (Array.isArray(question.choicesExplain) && question.choicesExplain.length > 0) ||
             (Array.isArray(question.refs) && question.refs.length > 0)
         )
@@ -695,7 +723,7 @@ function renderChoicesExplanation(parent, question, lang) {
 
         const label = document.createElement('div');
         label.className = 'choice-explain-label';
-        label.textContent = `Đáp án ${index + 1} (${isCorrectChoice ? 'Đúng' : 'Sai'})`;
+        appendChoiceExplanationLabel(label, explanationItem.option || question.o[explanationItem.originalIndex], isCorrectChoice, lang);
         choiceItem.appendChild(label);
 
         const content = document.createElement('div');
@@ -741,7 +769,7 @@ function renderRefs(parent, question) {
 }
 
 function renderFullExplanation(container, question, lang = getQuizRenderLanguage()) {
-    if (question.fullExplain) {
+    if (question.fullExplain && !areSameLocalizedText(question.fullExplain, question.explain)) {
         appendExplanationSection(container, 'Giải thích đầy đủ', question.fullExplain, lang);
     }
 
@@ -967,7 +995,7 @@ function reviewQuiz() {
         reviewExplanation.className = 'review-explanation';
         appendExplanationSection(reviewExplanation, 'Tổng quan', getQuestionExplanation(item));
 
-        if (item.fullExplain) {
+        if (item.fullExplain && !areSameLocalizedText(item.fullExplain, item.explain)) {
             appendExplanationSection(reviewExplanation, 'Giải thích đầy đủ', item.fullExplain);
         }
 
@@ -981,7 +1009,8 @@ function reviewQuiz() {
 
                 const label = document.createElement('div');
                 label.className = 'choice-explain-label';
-                label.textContent = `Đáp án ${choiceIndex + 1}`;
+                const correctIndices = Array.isArray(item.correctIndex) ? item.correctIndex : [item.correctIndex];
+                appendChoiceExplanationLabel(label, item.options[choiceIndex], correctIndices.includes(choiceIndex));
                 choiceItem.appendChild(label);
 
                 const content = document.createElement('div');
