@@ -1,0 +1,1542 @@
+{
+  "title": "AWS Practice Questions",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Trusted Advisor",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which of the following will help a user determine if they need to request an Amazon EC2 service limit increase?",
+        "vi": "Điều nào sau đây giúp người dùng xác định liệu họ có cần yêu cầu tăng giới hạn dịch vụ Amazon EC2 hay không?"
+      },
+      "options": [
+        {
+          "en": "AWS Trusted Advisor",
+          "vi": "Công cụ tư vấn tối ưu AWS Trusted Advisor"
+        },
+        {
+          "en": "Amazon RDS",
+          "vi": "Dịch vụ cơ sở dữ liệu quan hệ được quản lý Amazon RDS"
+        },
+        {
+          "en": "AWS Health Dashboard",
+          "vi": "Bảng điều khiển tình trạng các dịch vụ AWS"
+        },
+        {
+          "en": "AWS Cost Explorer",
+          "vi": "Công cụ phân tích chi phí AWS Cost Explorer"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "AWS Trusted Advisor is an online tool that provides you real time guidance to help you provision your resources following AWS best practices. Trusted Advisor checks help optimize your AWS infrastructure, improve security and performance, reduce your overall costs, and monitor service limits.",
+          "vi": ""
+        },
+        "full": {
+          "en": "AWS Trusted Advisor is an online tool that provides you real time guidance to help you provision your resources following AWS best practices. Trusted Advisor checks help optimize your AWS infrastructure, improve security and performance, reduce your overall costs, and monitor service limits.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is a managed SQL database and has nothing to do with service limits generally.",
+          "vi": "không Lý do: Đây là cơ sở dữ liệu SQL được quản lý và nhìn chung không liên quan đến giới hạn dịch vụ."
+        },
+        {
+          "en": "The  health dashboard shows issues or upcoming events that may impact your resources. It does not notify of service limit breaches.",
+          "vi": "không Lý do: Health Dashboard hiển thị các sự cố hoặc sự kiện sắp diễn ra có thể ảnh hưởng đến tài nguyên của bạn. Dịch vụ này không thông báo về việc vượt giới hạn dịch vụ."
+        },
+        {
+          "en": "Cost Explorer is used for viewing costs and will not assist with service limits.",
+          "vi": "không Lý do: Cost Explorer dùng để xem chi phí, không hỗ trợ xử lý giới hạn dịch vụ."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "According to the AWS shared responsibility model, which of the following is a responsibility of AWS?",
+        "vi": "Theo mô hình trách nhiệm chia sẻ của AWS, nội dung nào sau đây là trách nhiệm của AWS?"
+      },
+      "options": [
+        {
+          "en": "Patching software running on Amazon EC2 instances.",
+          "vi": "Cập nhật phần mềm chạy trên các Amazon EC2 instance."
+        },
+        {
+          "en": "Updating security group rules to enable connectivity.",
+          "vi": "Cập nhật quy tắc security group để cho phép kết nối."
+        },
+        {
+          "en": "Updating the firmware on the underlying EC2 hosts.",
+          "vi": "Cập nhật firmware trên các máy chủ EC2 vật lý bên dưới."
+        },
+        {
+          "en": "Configuring network ACLs to block malicious attacks.",
+          "vi": "Cấu hình network ACL để chặn các cuộc tấn công độc hại."
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "AWS are responsible for updating firmware on the physical Amazon EC2 host servers. Customers are then responsible for any patching of the EC2 operating system and any installed software.",
+          "vi": ""
+        },
+        "full": {
+          "en": "AWS are responsible for updating firmware on the physical Amazon EC2 host servers. Customers are then responsible for any patching of the EC2 operating system and any installed software.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This is a customer responsibility.",
+          "vi": "không Lý do: Đây là trách nhiệm của khách hàng."
+        },
+        {
+          "en": "This is a customer responsibility.",
+          "vi": "không Lý do: Đây là trách nhiệm của khách hàng."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is a customer responsibility.",
+          "vi": "không Lý do: Đây là trách nhiệm của khách hàng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/compliance/shared-responsibility-model/"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "CloudFront",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "A company is deploying a new web application in a single AWS Region that will be used by users globally. Which AWS services will assist with lowering latency and improving transfer speeds for the global users? (Select TWO.)",
+        "vi": "Một công ty triển khai ứng dụng web mới trong một AWS Region duy nhất và người dùng toàn cầu sẽ sử dụng ứng dụng này. Dịch vụ AWS nào giúp giảm độ trễ và cải thiện tốc độ truyền dữ liệu cho người dùng toàn cầu? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "AWS Global Accelerator",
+          "vi": "Dịch vụ tăng tốc truy cập toàn cầu AWS Global Accelerator"
+        },
+        {
+          "en": "AWS Direct Connect",
+          "vi": "Dịch vụ kết nối trực tiếp AWS Direct Connect"
+        },
+        {
+          "en": "AWS Transit Gateway",
+          "vi": "Cổng kết nối trung chuyển AWS Transit Gateway"
+        },
+        {
+          "en": "AWS Snowcone",
+          "vi": "Thiết bị truyền dữ liệu biên AWS Snowcone"
+        },
+        {
+          "en": "Amazon CloudFront",
+          "vi": "Mạng phân phối nội dung Amazon CloudFront"
+        }
+      ],
+      "answer": [
+        0,
+        4
+      ],
+      "explain": {
+        "short": {
+          "en": "Amazon CloudFront is a content delivery network (CDN) that caches content around the world for lower latency access. AWS Global Accelerator enables access to your application by leveraging the same Edge Locations as CloudFront and routing connections across the AWS global network.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Amazon CloudFront is a content delivery network (CDN) that caches content around the world for lower latency access. AWS Global Accelerator enables access to your application by leveraging the same Edge Locations as CloudFront and routing connections across the AWS global network.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "a correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This service provides private connections from data centers to AWS. It is not useful for distributed users as they will not be able to take advantage of it.",
+          "vi": "không Lý do: Dịch vụ này cung cấp kết nối riêng từ trung tâm dữ liệu tới AWS. Dịch vụ này không hữu ích cho người dùng phân tán toàn cầu vì họ không thể tận dụng kết nối riêng đó."
+        },
+        {
+          "en": "This service is used for optimizing the network topology of interconnected VPCs and on-premises networks.",
+          "vi": "không Lý do: Dịch vụ này dùng để tối ưu cấu trúc mạng giữa các VPC và mạng tại chỗ được kết nối với nhau."
+        },
+        {
+          "en": "Snowcone is used as an edge device for transferring data.",
+          "vi": "không Lý do: Snowcone là thiết bị biên dùng để truyền/chuyển dữ liệu."
+        },
+        {
+          "en": "also a correct answer.",
+          "vi": "là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/global-accelerator/",
+        "https://aws.amazon.com/cloudfront/",
+        "https://digitalcloud.training/aws-content-delivery-and-dns-services/",
+        "https://digitalcloud.training/aws-networking-services/"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "CloudFront",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which of the following deployments involves the reliability pillar of the AWS Well-Architected Framework?",
+        "vi": "Triển khai nào sau đây liên quan đến trụ cột Reliability của AWS Well-Architected Framework?"
+      },
+      "options": [
+        {
+          "en": "Use CloudFormation to deploy infrastructure",
+          "vi": "Dùng CloudFormation để triển khai hạ tầng"
+        },
+        {
+          "en": "Amazon EBS provisioned IOPS volume",
+          "vi": "Volume Amazon EBS Provisioned IOPS"
+        },
+        {
+          "en": "Amazon RDS Multi-AZ deployment",
+          "vi": "Triển khai Amazon RDS Multi-AZ"
+        },
+        {
+          "en": "Attach a WebACL to a CloudFront distribution",
+          "vi": "Gắn WebACL vào bản phân phối CloudFront"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "An Amazon Relational Database Service (RDS) deployment across multiple availability zones is a good example of using the reliability pillar of the AWS Well-Architected Framework. The specific design principle being followed here is “Automatically recover from failure”.",
+          "vi": ""
+        },
+        "full": {
+          "en": "An Amazon Relational Database Service (RDS) deployment across multiple availability zones is a good example of using the reliability pillar of the AWS Well-Architected Framework. The specific design principle being followed here is “Automatically recover from failure”.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This would be an example of using the operational excellence pillar.",
+          "vi": "không Lý do: Đây là ví dụ thuộc trụ cột vận hành xuất sắc."
+        },
+        {
+          "en": "This would be an example of performance efficiency.",
+          "vi": "không Lý do: Đây là ví dụ thuộc trụ cột hiệu quả hiệu năng."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This would be an example of using the security pillar.",
+          "vi": "không Lý do: Đây là ví dụ thuộc trụ cột bảo mật."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "Aurora",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is deploying a MySQL database on AWS. The database must easily scale and have automatic backup enabled. Which AWS service should the company use?",
+        "vi": "Một công ty triển khai cơ sở dữ liệu MySQL trên AWS. Cơ sở dữ liệu phải dễ mở rộng và có sao lưu tự động. Công ty nên dùng các dịch vụ AWS nào?"
+      },
+      "options": [
+        {
+          "en": "Amazon Athena",
+          "vi": "Dịch vụ truy vấn dữ liệu Amazon Athena"
+        },
+        {
+          "en": "Amazon DynamoDB",
+          "vi": "Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB"
+        },
+        {
+          "en": "Amazon Aurora",
+          "vi": "Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora"
+        },
+        {
+          "en": "Amazon DocumentDB",
+          "vi": "Dịch vụ cơ sở dữ liệu tài liệu Amazon DocumentDB"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "Amazon Aurora is a relational database that is compatible with MySQL and PostgreSQL database engines. Aurora is extremely fast and scales up to 128 TB. You can also deploy replicas for read scaling within and across Regions. Aurora also offers automated backups.",
+          "vi": "Đáp án: Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora"
+        },
+        "full": {
+          "en": "Amazon Aurora is a relational database that is compatible with MySQL and PostgreSQL database engines. Aurora is extremely fast and scales up to 128 TB. You can also deploy replicas for read scaling within and across Regions. Aurora also offers automated backups.",
+          "vi": "Đáp án: Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora"
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Athena is used for querying data in Amazon S3 using SQL.",
+          "vi": "không Lý do: Athena dùng để truy vấn dữ liệu trong Amazon S3 bằng SQL."
+        },
+        {
+          "en": "DynamoDB is a NoSQL (non-relational) database and you cannot deploy a MySQL database as it is a relational database type.",
+          "vi": "không Lý do: DynamoDB là cơ sở dữ liệu NoSQL, không phải cơ sở dữ liệu quan hệ, nên không thể triển khai MySQL trên DynamoDB."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "DocumentDB is a NoSQL database that supports document data structures.",
+          "vi": "không Lý do: DocumentDB là cơ sở dữ liệu NoSQL hỗ trợ cấu trúc dữ liệu dạng document."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/rds/aurora/mysql-features/"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "Auto Scaling",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A Cloud Practitioner anticipates an increase in application traffic at a future date and time when a sales event will take place. How can the Cloud Practitioner configure Amazon EC2 Auto Scaling to ensure the right number of Amazon EC2 instances are available ahead of the event?",
+        "vi": "Một Cloud Practitioner dự đoán lưu lượng ứng dụng sẽ tăng vào một ngày/giờ cụ thể trong tương lai khi diễn ra sự kiện bán hàng. Nên cấu hình Amazon EC2 Auto Scaling thế nào để đảm bảo đủ EC2 instance trước sự kiện?"
+      },
+      "options": [
+        {
+          "en": "Configure a scheduled scaling policy",
+          "vi": "Cấu hình chính sách mở rộng theo lịch"
+        },
+        {
+          "en": "Configure predictive scaling",
+          "vi": "Cấu hình mở rộng dự đoán"
+        },
+        {
+          "en": "Configure a step scaling policy",
+          "vi": "Cấu hình chính sách mở rộng theo từng bước"
+        },
+        {
+          "en": "Configure a target tracking scaling policy",
+          "vi": "Cấu hình chính sách mở rộng theo dõi mục tiêu"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "Scheduled scaling helps you to set up your own scaling schedule according to predictable load changes. For example, let's say that every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday. You can configure a schedule for Amazon EC2 Auto Scaling to increase capacity on Wednesday and decrease capacity on Friday.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Scheduled scaling helps you to set up your own scaling schedule according to predictable load changes. For example, let's say that every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday. You can configure a schedule for Amazon EC2 Auto Scaling to increase capacity on Wednesday and decrease capacity on Friday.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "Predictive scaling uses daily and weekly trends to determine when to scale. In this case the Cloud Practitioner knows about the event that will require more resources.",
+          "vi": "không Lý do: Predictive scaling dùng xu hướng theo ngày và theo tuần để xác định thời điểm mở rộng. Trong tình huống này, Cloud Practitioner đã biết trước sự kiện cần thêm tài nguyên."
+        },
+        {
+          "en": "Step scaling will launch resources in response to demand, this will not ensure the resource are ready at the right time as there will be a delay.",
+          "vi": "không Lý do: Step scaling khởi chạy tài nguyên để phản hồi nhu cầu, nhưng không đảm bảo tài nguyên đã sẵn sàng đúng thời điểm vì sẽ có độ trễ."
+        },
+        {
+          "en": "This policy will cause the ASG to attempt to keep resource utilization at the target value.",
+          "vi": "không Lý do: Chính sách này khiến Auto Scaling Group cố gắng duy trì mức sử dụng tài nguyên ở giá trị mục tiêu."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is migrating a monolithic application that does not scale well into the cloud and refactoring it into a microservices architecture. Which best practice of the AWS Well-Architected Framework does this plan relate to?",
+        "vi": "Một công ty di chuyển ứng dụng nguyên khối khó mở rộng lên đám mây và tái cấu trúc thành kiến trúc microdịch vụs. Kế hoạch này liên quan đến phương pháp thực hành tốt nhất nào của AWS Well-Architected Framework?"
+      },
+      "options": [
+        {
+          "en": "Manage change in automation",
+          "vi": "Quản lý thay đổi bằng tự động hóa"
+        },
+        {
+          "en": "Use multiple solutions to improve performance",
+          "vi": "Dùng nhiều giải pháp để cải thiện hiệu suất"
+        },
+        {
+          "en": "Implement loosely coupled services",
+          "vi": "Triển khai các dịch vụ liên kết lỏng lẻo"
+        },
+        {
+          "en": "Stop spending money on undifferentiated heavy lifting",
+          "vi": "Ngừng tốn công cho các công việc hạ tầng không tạo khác biệt"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "A microservices architecture will help ensure that each component of the application can scale independently and be updated independently. Loose coupling further assists as it places reduces the dependencies between systems and ensures that messages and data being passed between application components can be reliably and durably stored.",
+          "vi": ""
+        },
+        "full": {
+          "en": "A microservices architecture will help ensure that each component of the application can scale independently and be updated independently. Loose coupling further assists as it places reduces the dependencies between systems and ensures that messages and data being passed between application components can be reliably and durably stored.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This is not the best practice being implemented by the company.",
+          "vi": "không Lý do: Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này."
+        },
+        {
+          "en": "This is not the best practice being implemented by the company.",
+          "vi": "không Lý do: Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is not the best practice being implemented by the company.",
+          "vi": "không Lý do: Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "RDS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is planning to deploy an application with a relational database on AWS. The application layer requires access to the database instance’s operating system in order to run scripts. The company prefer to keep management overhead to a minimum. Which deployment should be used for the database?",
+        "vi": "Một công ty dự định triển khai ứng dụng có cơ sở dữ liệu quan hệ trên AWS. Tầng ứng dụng cần truy cập hệ điều hành của phiên bản cơ sở dữ liệu để chạy tập lệnh. Công ty muốn giảm tối đa công việc quản trị. Nên dùng cách triển khai nào cho cơ sở dữ liệu?"
+      },
+      "options": [
+        {
+          "en": "Amazon S3",
+          "vi": "Dịch vụ lưu trữ đối tượng Amazon S3"
+        },
+        {
+          "en": "Amazon EC2",
+          "vi": "Dịch vụ máy chủ ảo Amazon EC2"
+        },
+        {
+          "en": "Amazon DynamoDB",
+          "vi": "Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB"
+        },
+        {
+          "en": "Amazon RDS",
+          "vi": "Dịch vụ cơ sở dữ liệu quan hệ được quản lý Amazon RDS"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "The company would like to keep management overhead to a minimum so RDS would be good to meet that requirement. However, with RDS you cannot access the operating system so the requirement for running scripts on the OS rules RDS out. Therefore, the next best solution is to deploy on an Amazon EC2 instances as the other options presented are unsuitable for a relational database.",
+          "vi": ""
+        },
+        "full": {
+          "en": "The company would like to keep management overhead to a minimum so RDS would be good to meet that requirement. However, with RDS you cannot access the operating system so the requirement for running scripts on the OS rules RDS out. Therefore, the next best solution is to deploy on an Amazon EC2 instances as the other options presented are unsuitable for a relational database.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This is an object-storage system and is not suitable for running a relational database.",
+          "vi": "không Lý do: Đây là hệ thống lưu trữ object và không phù hợp để chạy cơ sở dữ liệu quan hệ."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is a non-relational database.",
+          "vi": "không Lý do: Đây là cơ sở dữ liệu phi quan hệ."
+        },
+        {
+          "en": "as the application would not be able to access the OS of the RDS instance to run scripts.",
+          "vi": "không Lý do: ứng dụng không thể truy cập hệ điều hành của RDS instance để chạy tập lệnh."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/rds/"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is deploying a new workload and software licensing requirements dictate that the workload must be run on a specific, physical server. Which Amazon EC2 instance deployment option should be used?",
+        "vi": "Một công ty triển khai khối lượng công việc mới và yêu cầu bản quyền phần mềm bắt buộc khối lượng công việc phải chạy trên một máy chủ vật lý cụ thể. Nên dùng tùy chọn triển khai EC2 nào?"
+      },
+      "options": [
+        {
+          "en": "Dedicated Instances",
+          "vi": "Phiên bản chuyên dụng Dedicated Instances"
+        },
+        {
+          "en": "Dedicated Hosts",
+          "vi": "Máy chủ chuyên dụng Dedicated Hosts"
+        },
+        {
+          "en": "Spot Instances",
+          "vi": "Phiên bản Spot Instances"
+        },
+        {
+          "en": "Reserved Instances",
+          "vi": "Phiên bản đặt trước Reserved Instances"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "An Amazon EC2 Dedicated Host is a physical server fully dedicated for your use, so you can help address corporate compliance requirements. Amazon EC2 Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2, so that you get the flexibility and cost effectiveness of using your own licenses, but with the resiliency, simplicity and elasticity of AWS",
+          "vi": ""
+        },
+        "full": {
+          "en": "An Amazon EC2 Dedicated Host is a physical server fully dedicated for your use, so you can help address corporate compliance requirements. Amazon EC2 Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2, so that you get the flexibility and cost effectiveness of using your own licenses, but with the resiliency, simplicity and elasticity of AWS",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "With dedicated instances you are not given a specific physical server to run your instances on.",
+          "vi": "không Lý do: Với Dedicated Instances, bạn không được cấp một máy chủ vật lý cụ thể để chạy instance."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This deployment option does not provide a specific physical server.",
+          "vi": "không Lý do: Tùy chọn triển khai này không cung cấp một máy chủ vật lý cụ thể."
+        },
+        {
+          "en": "This deployment option does not provide a specific physical server.",
+          "vi": "không Lý do: Tùy chọn triển khai này không cung cấp một máy chủ vật lý cụ thể."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/ec2/dedicated-hosts/"
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "IAM",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "What are AWS Identity and Access Management (IAM) access keys used for?",
+        "vi": "Access key của AWS Identity và Access Management (IAM) được dùng để làm gì?"
+      },
+      "options": [
+        {
+          "en": "Making programmatic calls to AWS from AWS APIs.",
+          "vi": "Thực hiện các lệnh gọi lập trình đến AWS thông qua AWS API."
+        },
+        {
+          "en": "Ensuring the integrity of log files.",
+          "vi": "Đảm bảo tính toàn vẹn của log file."
+        },
+        {
+          "en": "Logging in to the AWS Management Console.",
+          "vi": "Đăng nhập vào AWS Management Console."
+        },
+        {
+          "en": "Enabling encryption in transit for web servers.",
+          "vi": "Bật mã hóa khi truyền dữ liệu cho web server."
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "Access keys are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK).",
+          "vi": ""
+        },
+        "full": {
+          "en": "Access keys are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK).",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is not what access keys are used for.",
+          "vi": "không Lý do: Access key không được dùng cho mục đích này."
+        },
+        {
+          "en": "You use a user name and password for the management console.",
+          "vi": "không Lý do: Bạn dùng tên người dùng và mật khẩu để đăng nhập bảng điều khiển quản lý."
+        },
+        {
+          "en": "SSL/TLS certificates are used for creating encrypted channels using HTTPS.",
+          "vi": "không Lý do: Chứng chỉ SSL/TLS được dùng để tạo kênh mã hóa bằng HTTPS."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A media company wants to find and subscribe to third-party data sources to enrich their existing datasets with new insights. Which AWS service would be the best fit for this requirement?",
+        "vi": "Một công ty truyền thông muốn tìm và đăng ký các nguồn dữ liệu bên thứ ba để làm giàu tập dữ liệu hiện có. Dịch vụ AWS nào phù hợp nhất?"
+      },
+      "options": [
+        {
+          "en": "AWS Glue",
+          "vi": "Dịch vụ tích hợp và xử lý dữ liệu AWS Glue"
+        },
+        {
+          "en": "AWS Data Pipeline",
+          "vi": "Dịch vụ luân chuyển và xử lý dữ liệu AWS Data Pipeline"
+        },
+        {
+          "en": "AWS Redshift",
+          "vi": "Dịch vụ kho dữ liệu Amazon Redshift"
+        },
+        {
+          "en": "AWS Data Exchange",
+          "vi": "Dịch vụ trao đổi dữ liệu AWS Data Exchange"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "AWS Data Exchange is the correct answer because this service allows customers to find, subscribe to, and use third-party data in the cloud. Companies can subscribe to a diverse selection of data products provided by various data providers. The media company in this scenario can enrich their existing datasets through AWS Data Exchange by easily finding and subscribing to third-party data sources.",
+          "vi": ""
+        },
+        "full": {
+          "en": "AWS Data Exchange is the correct answer because this service allows customers to find, subscribe to, and use third-party data in the cloud. Companies can subscribe to a diverse selection of data products provided by various data providers. The media company in this scenario can enrich their existing datasets through AWS Data Exchange by easily finding and subscribing to third-party data sources.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Glue is a fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analytics. While AWS Glue can work with data, it does not primarily facilitate the subscription to third-party data sources as described in the scenario.",
+          "vi": "không Lý do: Glue là dịch vụ ETL được quản lý đầy đủ, giúp chuẩn bị và nạp dữ liệu cho phân tích. Dù AWS Glue làm việc với dữ liệu, dịch vụ này không chủ yếu hỗ trợ tìm và đăng ký nguồn dữ liệu bên thứ ba như tình huống nêu."
+        },
+        {
+          "en": "This service is designed to facilitate the processing and transfer of data between different AWS services and on-premises data sources. It isn't primarily used for subscribing to third-party data sources.",
+          "vi": "không Lý do: Dịch vụ này được thiết kế để xử lý và truyền dữ liệu giữa các dịch vụ AWS và nguồn dữ liệu tại chỗ. Dịch vụ này không chủ yếu dùng để đăng ký nguồn dữ liệu bên thứ ba."
+        },
+        {
+          "en": "Redshift is a data warehouse service that is used to analyze data using standard SQL and existing Business Intelligence tools. It doesn't allow you to find and subscribe to third-party data products.",
+          "vi": "không Lý do: Redshift là dịch vụ kho dữ liệu dùng để phân tích dữ liệu bằng SQL chuẩn và các công cụ trí tuệ kinh doanh. Dịch vụ này không cho phép tìm và đăng ký các sản phẩm dữ liệu bên thứ ba."
+        },
+        {
+          "en": "the correct answer (as explained above.)",
+          "vi": "là đáp án đúng. như đã giải thích ở trên."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/data-exchange/features/"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "Trusted Advisor",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which AWS Cloud service provides recommendations on how to optimize performance for AWS services?",
+        "vi": "Dịch vụ AWS Cloud nào cung cấp khuyến nghị về cách tối ưu hiệu suất cho các dịch vụ AWS?"
+      },
+      "options": [
+        {
+          "en": "Amazon Inspector",
+          "vi": "Dịch vụ kiểm tra và đánh giá bảo mật Amazon Inspector"
+        },
+        {
+          "en": "AWS CloudTrail",
+          "vi": "Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail"
+        },
+        {
+          "en": "AWS Trusted Advisor",
+          "vi": "Công cụ tư vấn tối ưu AWS Trusted Advisor"
+        },
+        {
+          "en": "Amazon CloudWatch",
+          "vi": "Dịch vụ giám sát Amazon CloudWatch"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "AWS Trusted Advisor can improve the performance of your service by checking your service limits, ensuring you take advantage of provisioned throughput, and monitoring for overutilized instances.",
+          "vi": ""
+        },
+        "full": {
+          "en": "AWS Trusted Advisor can improve the performance of your service by checking your service limits, ensuring you take advantage of provisioned throughput, and monitoring for overutilized instances.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS.",
+          "vi": "không Lý do: Inspector là dịch vụ đánh giá bảo mật tự động, giúp cải thiện bảo mật và tuân thủ cho ứng dụng triển khai trên AWS."
+        },
+        {
+          "en": "CloudTrail is an auditing service.",
+          "vi": "không Lý do: CloudTrail là dịch vụ ghi nhận/kiểm tra hoạt động/ghi nhận hoạt động."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "CloudWatch monitors performance but does not provide recommendations for optimization.",
+          "vi": "không Lý do: CloudWatch giám sát hiệu suất nhưng không đưa ra khuyến nghị tối ưu."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "S3",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which task can a user complete using the AWS Cost Management tools?",
+        "vi": "Người dùng có thể thực hiện tác vụ nào bằng các công cụ AWS Cost Management?"
+      },
+      "options": [
+        {
+          "en": "Delete all of your AWS resources with a single click.",
+          "vi": "Xóa toàn bộ tài nguyên AWS chỉ bằng một cú nhấp chuột."
+        },
+        {
+          "en": "Create budgets and receive notifications if current or forecasted usage exceeds the budgets.",
+          "vi": "Tạo ngân sách và nhận thông báo nếu mức sử dụng hiện tại hoặc dự báo vượt ngân sách."
+        },
+        {
+          "en": "Move data stored in Amazon S3 Standard to an archiving storage class to reduce cost.",
+          "vi": "Chuyển dữ liệu trong Amazon S3 Standard sang lớp lưu trữ dài hạn để giảm chi phí."
+        },
+        {
+          "en": "Launch either EC2 Spot instances or On-Demand instances based on the current pricing.",
+          "vi": "Khởi chạy EC2 Spot Instance hoặc On-Demand Instance dựa trên giá hiện tại."
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "The AWS Cost Management tools includes services, tools, and resources to organize and track cost and usage data, enhance control through consolidated billing and access permissions, enable better planning through budgeting and forecasts, and further lower costs with resources and pricing optimizations.",
+          "vi": ""
+        },
+        "full": {
+          "en": "The AWS Cost Management tools includes services, tools, and resources to organize and track cost and usage data, enhance control through consolidated billing and access permissions, enable better planning through budgeting and forecasts, and further lower costs with resources and pricing optimizations.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This can be done using third party tools, but not natively through the console.",
+          "vi": "không Lý do: Việc này có thể thực hiện bằng công cụ bên thứ ba, nhưng không có sẵn trực tiếp trong bảng điều khiển."
+        },
+        {
+          "en": "also a correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is performed using lifecycle management in Amazon S3, it is not a task performed by cost management tools.",
+          "vi": "không Lý do: Việc này được thực hiện bằng quản lý vòng đời trong Amazon S3, không phải nhiệm vụ của công cụ quản lý chi phí."
+        },
+        {
+          "en": "The cost management tools do not integrate with the tools used to launch EC2 instances and cannot choose the best pricing plan.",
+          "vi": "không Lý do: Công cụ quản lý chi phí không tích hợp với công cụ khởi chạy EC2 instance và không thể tự chọn phương án giá tốt nhất."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/aws-cost-management/",
+        "https://digitalcloud.training/certification-training/aws-certified-cloud-practitioner/aws-billing-and-pricing/"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "S3",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which of the following AWS features or services can be used to provide root storage volumes for Amazon EC2 instances?",
+        "vi": "Tính năng hoặc các dịch vụ AWS nào có thể cung cấp ổ lưu trữ gốc cho Amazon EC2 instance?"
+      },
+      "options": [
+        {
+          "en": "Amazon Simple Storage Service (S3)",
+          "vi": "Dịch vụ lưu trữ đối tượng Amazon S3"
+        },
+        {
+          "en": "Amazon Elastic Block Store (EBS)",
+          "vi": "Dịch vụ lưu trữ khối Amazon EBS"
+        },
+        {
+          "en": "Amazon Elastic File System (EFS)",
+          "vi": "Dịch vụ hệ thống tệp đàn hồi Amazon EFS"
+        },
+        {
+          "en": "Amazon Machine Image",
+          "vi": "Ảnh máy Amazon AMI"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "The Amazon Elastic Block Store (EBS) provides block-based storage volumes for Amazon EC2 instances. Root volumes are where the operating system is installed and can be either EBS volumes or instance store volumes.",
+          "vi": ""
+        },
+        "full": {
+          "en": "The Amazon Elastic Block Store (EBS) provides block-based storage volumes for Amazon EC2 instances. Root volumes are where the operating system is installed and can be either EBS volumes or instance store volumes.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Amazon S3 buckets cannot be attached to EC2 instances in any way, it is a service that is accessed via a REST API.",
+          "vi": "không Lý do: Amazon S3 bucket không thể gắn trực tiếp vào EC2 instance; đây là dịch vụ được truy cập thông qua REST API."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "EFS volumes cannot be used for the root storage volume but can be mounted to store data.",
+          "vi": "không Lý do: EFS không thể dùng làm ổ lưu trữ gốc, nhưng có thể được gắn để lưu trữ dữ liệu."
+        },
+        {
+          "en": "An AMI provides the information required to launch an instance including the mapping of EBS volumes.",
+          "vi": "không Lý do: AMI cung cấp thông tin cần thiết để khởi chạy instance, bao gồm ánh xạ các ổ đĩa EBS."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/opsworks/latest/userguide/best-practices-storage.html"
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "Lambda",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A startup is developing a web application where users can find articles based on various criteria such as keywords, authors, or topics. They seek an AWS service that can handle this function efficiently. Which service should they use?",
+        "vi": "Một startup phát triển ứng dụng web cho phép người dùng tìm bài viết theo từ khóa, tác giả hoặc chủ đề. Họ cần các dịch vụ AWS xử lý chức năng tìm kiếm hiệu quả. Nên dùng dịch vụ nào?"
+      },
+      "options": [
+        {
+          "en": "Amazon OpenSearch Service",
+          "vi": "Dịch vụ tìm kiếm và phân tích Amazon OpenSearch"
+        },
+        {
+          "en": "Amazon EC2",
+          "vi": "Dịch vụ máy chủ ảo Amazon EC2"
+        },
+        {
+          "en": "Amazon SQS",
+          "vi": "Dịch vụ hàng đợi tin nhắn Amazon SQS"
+        },
+        {
+          "en": "AWS Lambda",
+          "vi": "Dịch vụ chạy mã không cần quản lý máy chủ AWS Lambda"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "Amazon OpenSearch Service is designed to set up, manage, and scale search and analytics solutions, providing the necessary functionalities to efficiently find articles based on different criteria.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Amazon OpenSearch Service is designed to set up, manage, and scale search and analytics solutions, providing the necessary functionalities to efficiently find articles based on different criteria.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer (as explained above.)",
+          "vi": "là đáp án đúng. như đã giải thích ở trên."
+        },
+        {
+          "en": "Amazon EC2 is incorrect because, although it is used to host applications and can technically host a web application, it does not specialize in setting up search functionalities within a web application.",
+          "vi": "không Lý do: Amazon EC2 có thể chạy ứng dụng/ứng dụng web, nhưng không phải dịch vụ chuyên biệt để thiết lập chức năng tìm kiếm trong ứng dụng web."
+        },
+        {
+          "en": "Amazon SQS is incorrect because it is a message queuing service used to decouple the components of a cloud application, not suited for setting up a search functionality for a web application.",
+          "vi": "không Lý do: Amazon SQS là dịch vụ hàng đợi tin nhắn dùng để tách rời các thành phần ứng dụng, không phù hợp để xây dựng chức năng tìm kiếm cho ứng dụng web."
+        },
+        {
+          "en": "AWS Lambda is incorrect as it is mainly used to run code in response to events and automatically manage the computing fleet, which does not inherently provide a search functionality for a website's content.",
+          "vi": "không Lý do: AWS Lambda chủ yếu dùng để chạy mã theo sự kiện và tự quản lý hạ tầng tính toán; bản thân nó không cung cấp chức năng tìm kiếm nội dung website."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/opensearch-service/features/"
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "Auto Scaling",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A website has a global customer base and users have reported poor performance when connecting to the site. Which AWS service will improve the customer experience by reducing latency?",
+        "vi": "Một website có khách hàng toàn cầu và người dùng báo cáo hiệu suất kém khi truy cập. Dịch vụ AWS nào cải thiện trải nghiệm bằng cách giảm độ trễ?"
+      },
+      "options": [
+        {
+          "en": "Amazon CloudFront",
+          "vi": "Mạng phân phối nội dung Amazon CloudFront"
+        },
+        {
+          "en": "AWS Direct Connect",
+          "vi": "Dịch vụ kết nối trực tiếp AWS Direct Connect"
+        },
+        {
+          "en": "Amazon EC2 Auto Scaling",
+          "vi": "Dịch vụ tự động mở rộng Amazon EC2 Auto Scaling"
+        },
+        {
+          "en": "Amazon ElastiCache",
+          "vi": "Dịch vụ bộ nhớ đệm Amazon ElastiCache"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "Direct Connect is a private network connection between an on-premises data center and AWS.",
+          "vi": "không Lý do: Direct Connect là kết nối mạng riêng giữa trung tâm dữ liệu tại chỗ và AWS."
+        },
+        {
+          "en": "Auto Scaling launches and terminates instances, this does not reduce latency for global users.",
+          "vi": "không Lý do: Auto Scaling khởi chạy và chấm dứt instance, nhưng không làm giảm độ trễ cho người dùng toàn cầu."
+        },
+        {
+          "en": "ElastiCache is a database caching service, it is not used to cache websites.",
+          "vi": "không Lý do: ElastiCache là dịch vụ bộ nhớ đệm cho cơ sở dữ liệu, không phải CDN để lưu website vào bộ nhớ đệm."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/cloudfront/"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "Billing",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "AWS are able to continually reduce their pricing due to:",
+        "vi": "AWS có thể liên tục giảm giá nhờ yếu tố nào?"
+      },
+      "options": [
+        {
+          "en": "Economies of scale.",
+          "vi": "Lợi thế kinh tế theo quy mô."
+        },
+        {
+          "en": "Pay-as-you go pricing.",
+          "vi": "Mô hình trả tiền theo mức sử dụng."
+        },
+        {
+          "en": "Compute savings plans.",
+          "vi": "Compute Savings Plans"
+        },
+        {
+          "en": "Elastic compute services.",
+          "vi": "Dịch vụ điện toán co giãn."
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "By using cloud computing, you can achieve a lower variable cost than you can get on your own. Because usage from hundreds of thousands of customers is aggregated in the cloud, providers such as AWS can achieve higher economies of scale, which translates into lower pay as-you-go prices.",
+          "vi": ""
+        },
+        "full": {
+          "en": "By using cloud computing, you can achieve a lower variable cost than you can get on your own. Because usage from hundreds of thousands of customers is aggregated in the cloud, providers such as AWS can achieve higher economies of scale, which translates into lower pay as-you-go prices.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is a benefit to the customer but is not the reason the actual unit prices are continually being reduce.",
+          "vi": "không Lý do: Đây là lợi ích cho khách hàng, nhưng không phải lý do khiến đơn giá thực tế liên tục giảm."
+        },
+        {
+          "en": "This is another feature you can take advantage of for bigger discounts but is not the reason for prices being lowered.",
+          "vi": "không Lý do: Đây là tính năng giúp nhận chiết khấu cao hơn, nhưng không phải lý do giá AWS giảm."
+        },
+        {
+          "en": "Elasticity is useful for scaling your resources and aligning costs with demand but is not why AWS prices are being lowered.",
+          "vi": "không Lý do: Tính co giãn giúp mở rộng tài nguyên và điều chỉnh chi phí theo nhu cầu, nhưng không phải lý do AWS giảm giá."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "CloudWatch",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A Cloud Practitioner needs to monitor a new Amazon EC2 instances CPU and network utilization. Which AWS service should be used?",
+        "vi": "Một Cloud Practitioner cần giám sát CPU và mức sử dụng mạng của một Amazon EC2 instance mới. Nên dùng các dịch vụ AWS nào?"
+      },
+      "options": [
+        {
+          "en": "AWS CloudTrail",
+          "vi": "Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail"
+        },
+        {
+          "en": "Amazon CloudWatch",
+          "vi": "Dịch vụ giám sát Amazon CloudWatch"
+        },
+        {
+          "en": "Amazon Inspector",
+          "vi": "Dịch vụ kiểm tra và đánh giá bảo mật Amazon Inspector"
+        },
+        {
+          "en": "AWS Systems Manager",
+          "vi": "Dịch vụ quản lý hệ thống AWS Systems Manager"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "Amazon CloudWatch is a performance monitoring service. AWS services send metrics about their utilization to CloudWatch which collects the metrics. You can then view the results in CloudWatch and configure alarms.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Amazon CloudWatch is a performance monitoring service. AWS services send metrics about their utilization to CloudWatch which collects the metrics. You can then view the results in CloudWatch and configure alarms.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "CloudTrail is used for auditing, not performance monitoring.",
+          "vi": "không Lý do: CloudTrail dùng để ghi nhận/kiểm tra hoạt động, không dùng để giám sát hiệu suất."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "Inspector is an automated security service.",
+          "vi": "không Lý do: Inspector là dịch vụ bảo mật tự động."
+        },
+        {
+          "en": "Systems Manager is used for managing EC2 instances such as installing patches and software.",
+          "vi": "không Lý do: Systems Manager dùng để quản lý EC2 instance, ví dụ cài đặt bản vá và phần mềm."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/cloudwatch/features/"
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A user is planning to launch three EC2 instances behind a single Elastic Load Balancer. The deployment should be highly available. How should the user achieve this?",
+        "vi": "Một người dùng dự định chạy ba EC2 instance phía sau một Elastic Load Balancer. Triển khai cần có tính sẵn sàng cao. Nên làm thế nào?"
+      },
+      "options": [
+        {
+          "en": "Launch the instances in multiple AWS Regions, and use Elastic IP addresses.",
+          "vi": "Chạy instance ở nhiều AWS Region và dùng Elastic IP."
+        },
+        {
+          "en": "Launch the instances as EC2 Spot Instances in the same AWS Region and the same Availability Zone.",
+          "vi": "Chạy các instance Spot trong cùng Region và cùng Availability Zone."
+        },
+        {
+          "en": "Launch the instances as EC2 Reserved Instances in the same AWS Region, but in different Availability Zones.",
+          "vi": "Chạy Reserved Instance trong cùng Region nhưng khác Availability Zone."
+        },
+        {
+          "en": "Launch the instances across multiple Availability Zones in a single AWS Region.",
+          "vi": "Chạy các instance trên nhiều Availability Zone trong một AWS Region."
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "To make the deployment highly available the user should launch the instances across multiple Availability Zones in a single AWS Region. Elastic Load Balancers can only serve targets in a single Region so it is not possible to deploy across Regions.",
+          "vi": ""
+        },
+        "full": {
+          "en": "To make the deployment highly available the user should launch the instances across multiple Availability Zones in a single AWS Region. Elastic Load Balancers can only serve targets in a single Region so it is not possible to deploy across Regions.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "You cannot use an ELB with instances in multiple Regions and using an EIP does not help.",
+          "vi": "không Lý do: Không thể dùng một ELB cho instance ở nhiều Region; dùng Elastic IP cũng không giải quyết yêu cầu."
+        },
+        {
+          "en": "The pricing model is not relevant to high availability and deploying in a single AZ does not result in a highly available deployment.",
+          "vi": "không Lý do: Mô hình giá không liên quan đến tính sẵn sàng cao; triển khai trong một AZ không tạo ra hệ thống có tính sẵn sàng cao."
+        },
+        {
+          "en": "Using reserved instances may not be appropriate as we do not know whether this is going to be a long-term workload or not.",
+          "vi": "không Lý do: Dùng Reserved Instances có thể không phù hợp vì chưa biết khối lượng công việc này có chạy dài hạn hay không."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "Trusted Advisor",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "What can a Cloud Practitioner use to categorize and track AWS costs by project?",
+        "vi": "Cloud Practitioner có thể dùng gì để phân loại và theo dõi chi phí AWS theo dự án?"
+      },
+      "options": [
+        {
+          "en": "AWS Trusted Advisor",
+          "vi": "Công cụ tư vấn tối ưu AWS Trusted Advisor"
+        },
+        {
+          "en": "Consolidated billing",
+          "vi": "Thanh toán hợp nhất"
+        },
+        {
+          "en": "Cost Allocation Tags",
+          "vi": "Thẻ phân bổ chi phí"
+        },
+        {
+          "en": "Multiple accounts",
+          "vi": "Nhiều tài khoản"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "Cost allocation tags can be used to tag and categorize your resources and then run view the billing in Cost Explorer and the cost allocation report. For example you can tag your resources by department or project and then view costs attributed to the resources used by those groups.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Cost allocation tags can be used to tag and categorize your resources and then run view the billing in Cost Explorer and the cost allocation report. For example you can tag your resources by department or project and then view costs attributed to the resources used by those groups.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This service advises you on best practices for provisioning resources.",
+          "vi": "không Lý do: Dịch vụ này đưa ra khuyến nghị phương pháp thực hành tốt nhất khi cấp phát tài nguyên."
+        },
+        {
+          "en": "Consolidated billing will give you usage per account but not per project.",
+          "vi": "không Lý do: Consolidated billing cho biết mức sử dụng theo tài khoản, không phải theo dự án."
+        },
+        {
+          "en": "You do not need to split your usage across multiple accounts, you can instead use cost allocation tags.",
+          "vi": "không Lý do: Bạn không cần tách mức sử dụng ra nhiều tài khoản; có thể dùng thẻ phân bổ chi phí."
+        },
+        {
+          "en": "Incorrect.",
+          "vi": "Sai."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "Security",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which of the following represents a value proposition for using the AWS Cloud?",
+        "vi": "Điều nào sau đây thể hiện giá trị khi sử dụng AWS Cloud?"
+      },
+      "options": [
+        {
+          "en": "AWS provides full access to their trung tâm dữ liệus.",
+          "vi": "AWS cung cấp toàn quyền truy cập vào trung tâm dữ liệu."
+        },
+        {
+          "en": "It is not necessary to enter into long term contracts.",
+          "vi": "Không cần ký hợp đồng dài hạn."
+        },
+        {
+          "en": "Customers can request specialized hardware.",
+          "vi": "Khách hàng có thể yêu cầu phần cứng chuyên biệt."
+        },
+        {
+          "en": "AWS is responsible for securing your applications.",
+          "vi": "AWS chịu trách nhiệm bảo mật ứng dụng của bạn."
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "With AWS you can pay for what you use and there is no requirement to enter into long term contracts. However, there are opportunities to gain large discounts by committing to 1 or 3 years contracts for reserved instances and savings plans.",
+          "vi": ""
+        },
+        "full": {
+          "en": "With AWS you can pay for what you use and there is no requirement to enter into long term contracts. However, there are opportunities to gain large discounts by committing to 1 or 3 years contracts for reserved instances and savings plans.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "",
+          "vi": "không Lý do: Khách hàng không được truy cập trực tiếp vào các trung tâm dữ liệu vật lý của AWS."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "This is never the case; you cannot access the AWS data centers.",
+          "vi": "không Lý do: Khách hàng không được quyết định phần cứng vật lý mà AWS sử dụng trong các trung tâm dữ liệu."
+        },
+        {
+          "en": "AWS does not secure your applications.",
+          "vi": "không Lý do: Theo mô hình trách nhiệm chia sẻ, khách hàng chịu trách nhiệm bảo mật ứng dụng của mình trên AWS."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "Security",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "A company is deploying an application in the AWS Cloud. How can they secure the application? (Select TWO.)",
+        "vi": "Một công ty triển khai ứng dụng trên AWS Cloud. Họ có thể bảo mật ứng dụng bằng cách nào? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Enable encryption for the application data at rest.",
+          "vi": "Bật mã hóa cho dữ liệu ứng dụng khi lưu trữ."
+        },
+        {
+          "en": "Enable monitoring by turning off encryption for data in transit.",
+          "vi": "Bật giám sát bằng cách tắt mã hóa dữ liệu khi truyền."
+        },
+        {
+          "en": "Provide full admin access to developer and operations staff.",
+          "vi": "Cấp toàn quyền quản trị cho đội phát triển và vận hành."
+        },
+        {
+          "en": "Configure truy cập công khai for the AWS services used by the application.",
+          "vi": "Cấu hình truy cập công khai cho các dịch vụ AWS được ứng dụng sử dụng."
+        },
+        {
+          "en": "Limit access privileges according to the principal of least privilege.",
+          "vi": "Giới hạn quyền truy cập theo nguyên tắc đặc quyền tối thiểu."
+        }
+      ],
+      "answer": [
+        0,
+        4
+      ],
+      "explain": {
+        "short": {
+          "en": "In this scenario the company must apply best practice principals for securing their application. Enabling encryption for data at rest is definitely a good practice and data in transit should also be encrypted where possible as well. It is also a good practice to limit access privileges according to the principal of least privilege. This means limiting privileges to those required to perform a specific role.",
+          "vi": ""
+        },
+        "full": {
+          "en": "In this scenario the company must apply best practice principals for securing their application. Enabling encryption for data at rest is definitely a good practice and data in transit should also be encrypted where possible as well. It is also a good practice to limit access privileges according to the principal of least privilege. This means limiting privileges to those required to perform a specific role.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "a correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "There is no need to turn off encryption in transit to enable monitoring and this would reduce security.",
+          "vi": "không Lý do: Không cần tắt mã hóa dữ liệu khi truyền để bật giám sát; làm như vậy sẽ làm giảm bảo mật."
+        },
+        {
+          "en": "This is not a security best practice; it is better to assign permissions according to the principal of least privilege",
+          "vi": "không Lý do: Đây không phải phương pháp bảo mật tốt; nên cấp quyền theo nguyên tắc đặc quyền tối thiểu."
+        },
+        {
+          "en": "Incorrect.",
+          "vi": "Sai."
+        },
+        {
+          "en": "In some cases public access may be required and in that case only the front end service(s) should be configured for public access. Otherwise it would be best to not enable public access.",
+          "vi": "không Lý do: Lựa chọn này không phù hợp với yêu cầu của câu hỏi. Dịch vụ hoặc khái niệm này có mục đích sử dụng khác, không đáp ứng đúng tình huống đã nêu."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/security/"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company has many underutilized compute resources on-premises. Which AWS Cloud feature will help resolve this issue?",
+        "vi": "Một công ty có nhiều tài nguyên điện toán tại chỗ đang bị sử dụng không hiệu quả. Tính năng nào của AWS Cloud giúp giải quyết vấn đề này?"
+      },
+      "options": [
+        {
+          "en": "High availability",
+          "vi": "Tính sẵn sàng cao"
+        },
+        {
+          "en": "Fault tolerance",
+          "vi": "Khả năng chịu lỗi"
+        },
+        {
+          "en": "Global deployment",
+          "vi": "Triển khai toàn cầu"
+        },
+        {
+          "en": "Elasticity",
+          "vi": "Tính đàn hồi / khả năng tự động co giãn tài nguyên"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "Elasticity can resolve the issue of underutilization as you can easily and automatically adjust the resource allocations for your compute resources based on actual utilization. This ensures that you have the right amount of resources and do not pay for more than you need.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Elasticity can resolve the issue of underutilization as you can easily and automatically adjust the resource allocations for your compute resources based on actual utilization. This ensures that you have the right amount of resources and do not pay for more than you need.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This does not help with resolving underutilization.",
+          "vi": "không Lý do: Điều này không giúp giải quyết tình trạng sử dụng tài nguyên chưa hiệu quả."
+        },
+        {
+          "en": "This does not help with resolving underutilization.",
+          "vi": "không Lý do: Điều này không giúp giải quyết tình trạng sử dụng tài nguyên chưa hiệu quả."
+        },
+        {
+          "en": "This does not help with resolving underutilization.",
+          "vi": "không Lý do: Điều này không giúp giải quyết tình trạng sử dụng tài nguyên chưa hiệu quả."
+        },
+        {
+          "en": "the correct answer.",
+          "vi": "là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/aws-cost-management/aws-cost-optimization/right-sizing/"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A financial services firm wants to build a real-time analytics platform where data can be streamed and analyzed on the fly. They are looking to use Apache Kafka for this, but they want to avoid the overhead of managing the Kafka infrastructure. Which AWS service would be the best fit for this requirement?",
+        "vi": "Một công ty tài chính muốn xây dựng nền tảng phân tích thời gian thực, dữ liệu được stream và phân tích ngay. Họ muốn dùng Apache Kafka nhưng không muốn quản lý hạ tầng Kafka. Dịch vụ AWS nào phù hợp nhất?"
+      },
+      "options": [
+        {
+          "en": "Amazon Redshift",
+          "vi": "Dịch vụ kho dữ liệu Amazon Redshift"
+        },
+        {
+          "en": "Amazon Kinesis",
+          "vi": "Dịch vụ xử lý dữ liệu streaming Amazon Kinesis"
+        },
+        {
+          "en": "Amazon SQS",
+          "vi": "Dịch vụ hàng đợi tin nhắn Amazon SQS"
+        },
+        {
+          "en": "Amazon MSK",
+          "vi": "Dịch vụ quản lý Apache Kafka Amazon MSK"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "Amazon MSK (Managed Streaming for Kafka) is the correct choice as it is a fully managed service that facilitates building and running applications built on Apache Kafka without having to manage the underlying infrastructure. It would allow the financial services firm to focus on building their analytics platform without being concerned about Kafka’s infrastructure management, hence reducing the operational overhead.",
+          "vi": ""
+        },
+        "full": {
+          "en": "Amazon MSK (Managed Streaming for Kafka) is the correct choice as it is a fully managed service that facilitates building and running applications built on Apache Kafka without having to manage the underlying infrastructure. It would allow the financial services firm to focus on building their analytics platform without being concerned about Kafka’s infrastructure management, hence reducing the operational overhead.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "This is a data warehousing service designed to work with business intelligence tools for analytical reporting, and it does not offer Apache Kafka as a service, which is what is needed for real-time analytics in this scenario.",
+          "vi": "là không chính xác. Đây là một dịch vụ kho dữ liệu được thiết kế để hoạt động với các công cụ business intelligence nhằm phục vụ báo cáo phân tích, và nó không cung cấp Apache Kafka dưới dạng dịch vụ, vốn là thứ cần thiết cho phân tích thời gian thực trong tình huống này."
+        },
+        {
+          "en": "Amazon Kinesis is incorrect as even though it is used for real-time streaming data and can technically be used to build a real-time analytics solution, it is not the best option when the requirement specifically mentions leveraging Apache Kafka. Kinesis has its own streaming data solution that is separate from Kafka.",
+          "vi": "là không chính xác. Amazon Kinesis là không chính xác vì mặc dù nó được sử dụng cho dữ liệu truyền trực tuyến theo thời gian thực và về mặt kỹ thuật có thể được dùng để xây dựng một giải pháp phân tích thời gian thực, nhưng nó không phải là lựa chọn tốt nhất khi yêu cầu cụ thể đề cập đến việc tận dụng Apache Kafka. Kinesis có giải pháp dữ liệu truyền trực tuyến riêng, tách biệt với Kafka."
+        },
+        {
+          "en": "This is a message queue service used to decouple the components of a cloud application, not suited for setting up and managing a real-time analytics platform based on Apache Kafka.",
+          "vi": "là không chính xác. Đây là một dịch vụ hàng đợi tin nhắn được sử dụng để tách rời các thành phần của một ứng dụng đám mây, không phù hợp để thiết lập và quản lý một nền tảng phân tích thời gian thực dựa trên Apache Kafka."
+        },
+        {
+          "en": "the correct answer (as explained above.)",
+          "vi": "là đáp án đúng. như đã giải thích ở trên."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/msk/features/"
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "Which of the following are valid benefits of using the AWS Cloud? (Select TWO.)",
+        "vi": "Lợi ích hợp lệ khi sử dụng AWS Cloud là gì? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Outsource all operational risk.",
+          "vi": "Chuyển toàn bộ rủi ro vận hành cho bên ngoài."
+        },
+        {
+          "en": "Ability to go global quickly.",
+          "vi": "Có khả năng triển khai toàn cầu nhanh chóng."
+        },
+        {
+          "en": "Total control over trung tâm dữ liệu infrastructure.",
+          "vi": "Toàn quyền kiểm soát hạ tầng trung tâm dữ liệu."
+        },
+        {
+          "en": "Fast provisioning of IT resources.",
+          "vi": "Cấp phát tài nguyên CNTT nhanh chóng."
+        },
+        {
+          "en": "Outsource all application development to AWS.",
+          "vi": "Chuyển toàn bộ việc phát triển ứng dụng cho AWS."
+        }
+      ],
+      "answer": [
+        1,
+        3
+      ],
+      "explain": {
+        "short": {
+          "en": "The ability to provision IT resources quickly and easily and also globally are valid benefits of using the AWS cloud. These are covered in AWS’ 6 advantages of cloud which include “Increase speed and agility” and “Go global in minutes”.",
+          "vi": ""
+        },
+        "full": {
+          "en": "The ability to provision IT resources quickly and easily and also globally are valid benefits of using the AWS cloud. These are covered in AWS’ 6 advantages of cloud which include “Increase speed and agility” and “Go global in minutes”.",
+          "vi": ""
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "You don’t have any control over data center infrastructure in the AWS Cloud.",
+          "vi": "không Lý do: Bạn không chuyển giao toàn bộ rủi ro vận hành; bạn vẫn phải quản lý rủi ro cho các ứng dụng chạy trên AWS."
+        },
+        {
+          "en": "also a correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "",
+          "vi": "không Lý do: Bạn không có quyền kiểm soát hạ tầng trung tâm dữ liệu trong AWS Cloud."
+        },
+        {
+          "en": "a correct answer.",
+          "vi": "là đáp án đúng."
+        },
+        {
+          "en": "You must still develop your own applications on the AWS Cloud.",
+          "vi": "không Lý do: Bạn vẫn phải tự phát triển ứng dụng của mình trên AWS Cloud."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+      ]
+    }
+  ]
+}

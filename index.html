@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm VÍP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thêm icon cho đẹp -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> Ôn Tập Cloud Computing</h1>
+        </header>
+
+        <!-- Màn hình 1: Danh sách đề -->
+        <div id="dashboard" class="screen">
+            <div class="options-bar">
+                <label class="language-picker">
+                    <span class="label-text">Ngôn ngữ</span>
+                    <select id="language-select">
+                        <option value="en" selected>English</option>
+                        <option value="vi">Vietnamese</option>
+                        <option value="both">Bilingual</option>
+                    </select>
+                </label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="shuffle-toggle">
+                    <span class="slider"></span>
+                    <span class="label-text">🔀 Trộn câu hỏi</span>
+                </label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="shuffle-options-toggle" checked>
+                    <span class="slider"></span>
+                    <span class="label-text">🔀 Trộn đáp án</span>
+                </label>
+            </div>
+            <div id="chapter-list" class="chapter-grid">
+                <!-- JS sẽ tự động thêm đề thi vào đây -->
+            </div>
+        </div>
+
+        <!-- Màn hình 2: Làm bài thi -->
+        <div id="quiz-screen" class="screen quiz-container">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <button class="exit-btn" onclick="goHome()"><i class="fas fa-times"></i> Thoát</button>
+            </div>
+            
+            <div id="question-text" class="question-text">
+                Nội dung câu hỏi...
+            </div>
+            <button id="translation-toggle-btn" class="translation-toggle-btn" type="button">Hiện dịch</button>
+            <div id="options-grid" class="options-grid">
+                <!-- Các đáp án -->
+            </div>
+            <div class="controls-area">
+                <button id="confirm-answer-btn" class="confirm-answer-btn">Xác nhận đáp án</button>
+                <button id="next-btn" class="next-btn">Câu tiếp theo <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Màn hình 3: Kết quả -->
+        <div id="result-screen" class="screen result-screen">
+            <h2><i class="fas fa-trophy"></i> Hoàn thành!</h2>
+            <div class="score-circle">
+                <span id="final-score">0/0</span>
+            </div>
+            <div class="result-actions">
+                <button class="action-btn review" onclick="reviewQuiz()"><i class="fas fa-eye"></i> Xem lại bài</button>
+                <button class="action-btn home" onclick="goHome()"><i class="fas fa-home"></i> Về trang chủ</button>
+            </div>
+            
+            <!-- Khu vực xem lại bài (Mặc định ẩn) -->
+            <div id="review-area" class="review-area"></div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

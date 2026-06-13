@@ -1,0 +1,12 @@
+{
+  "name": "web-trac-nghiem",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "validate:test": "node tools/validate_questions.js data/aws_questions_test_10.json",
+    "validate:merged": "node tools/validate_questions.js data/aws_questions_merged_test.json",
+    "convert:test": "node tools/convert_aws_raw_to_json.js input/aws_raw_test_10.txt data/aws_questions_converted_test_10.json",
+    "merge:test": "node tools/merge_question_parts.js data/aws_questions_merged_test.json data/aws_questions_part_001.json",
+    "check:tools": "node --check tools/convert_aws_raw_to_json.js && node --check tools/validate_questions.js && node --check tools/merge_question_parts.js"
+  }
+}

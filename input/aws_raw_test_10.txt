@@ -1,0 +1,222 @@
+Question 1:
+?? b?i:
+Which of the following will help a user determine if they need to request an Amazon EC2 service limit increase?
+Điều nào sau đây giúp người dùng xác định liệu họ có cần yêu cầu tăng giới hạn dịch vụ Amazon EC2 hay không?
+Options:
+A. AWS Trusted Advisor - Công cụ tư vấn tối ưu AWS Trusted Advisor
+B. Amazon RDS - Dịch vụ cơ sở dữ liệu quan hệ được quản lý Amazon RDS
+C. AWS Health Dashboard - Bảng điều khiển tình trạng các dịch vụ AWS
+D. AWS Cost Explorer - Công cụ phân tích chi phí AWS Cost Explorer
+-> ??p ?n:
+AWS Trusted Advisor
+-> Gi?i th?ch:
+AWS Trusted Advisor is an online tool that provides you real time guidance to help you provision your resources following AWS best practices. Trusted Advisor checks help optimize your AWS infrastructure, improve security and performance, reduce your overall costs, and monitor service limits.
+AWS Trusted Advisor kiểm tra các phương pháp thực hành tốt nhất, bao gồm giới hạn dịch vụ, hiệu suất, bảo mật và chi phí; vì vậy công cụ này phù hợp để biết có cần tăng giới hạn EC2 hay không.
+Gi?i th?ch ??p ?n:
+A. CORRECT: Correct. "AWS Trusted Advisor" is the correct answer. - ??NG: Đúng. "Công cụ tư vấn tối ưu AWS Trusted Advisor" là đáp án đúng.
+B. INCORRECT: Incorrect. This is a managed SQL database and has nothing to do with service limits generally. - SAI: Sai. Đây là cơ sở dữ liệu SQL được quản lý và nhìn chung không liên quan đến giới hạn dịch vụ.
+C. INCORRECT: Incorrect. The health dashboard shows issues or upcoming events that may impact your resources. It does not notify of service limit breaches. - SAI: Sai. Health Dashboard hiển thị các sự cố hoặc sự kiện sắp diễn ra có thể ảnh hưởng đến tài nguyên của bạn. Dịch vụ này không thông báo về việc vượt giới hạn dịch vụ.
+D. INCORRECT: Incorrect. Cost Explorer is used for viewing costs and will not assist with service limits. - SAI: Sai. Cost Explorer dùng để xem chi phí, không hỗ trợ xử lý giới hạn dịch vụ.
+References:
+https://aws.amazon.com/premiumsupport/technology/trusted-advisor/
+
+Question 2:
+?? b?i:
+According to the AWS shared responsibility model, which of the following is a responsibility of AWS?
+Theo mô hình trách nhiệm chia sẻ của AWS, nội dung nào sau đây là trách nhiệm của AWS?
+Options:
+A. Patching software running on Amazon EC2 instances. - Cập nhật phần mềm chạy trên các Amazon EC2 instance.
+B. Updating security group rules to enable connectivity. - Cập nhật quy tắc security group để cho phép kết nối.
+C. Updating the firmware on the underlying EC2 hosts. - Cập nhật firmware trên các máy chủ EC2 vật lý bên dưới.
+D. Configuring network ACLs to block malicious attacks. - Cấu hình network ACL để chặn các cuộc tấn công độc hại.
+-> ??p ?n:
+Updating the firmware on the underlying EC2 hosts.
+-> Gi?i th?ch:
+AWS are responsible for updating firmware on the physical Amazon EC2 host servers. Customers are then responsible for any patching of the EC2 operating system and any installed software.
+AWS chịu trách nhiệm với hạ tầng vật lý bên dưới, bao gồm firmware của máy chủ EC2. Khách hàng chịu trách nhiệm vá hệ điều hành và phần mềm chạy trong EC2.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. This is a customer responsibility. - SAI: Sai. Đây là trách nhiệm của khách hàng.
+B. INCORRECT: Incorrect. This is a customer responsibility. - SAI: Sai. Đây là trách nhiệm của khách hàng.
+C. CORRECT: Correct. "Updating the firmware on the underlying EC2 hosts." is the correct answer. - ??NG: Đúng. "Cập nhật firmware trên các máy chủ EC2 vật lý bên dưới." là đáp án đúng.
+D. INCORRECT: Incorrect. This is a customer responsibility. - SAI: Sai. Đây là trách nhiệm của khách hàng.
+References:
+https://aws.amazon.com/compliance/shared-responsibility-model/
+
+Question 3:
+?? b?i:
+A company is deploying a new web application in a single AWS Region that will be used by users globally. Which AWS services will assist with lowering latency and improving transfer speeds for the global users? (Select TWO.)
+Một công ty triển khai ứng dụng web mới trong một AWS Region duy nhất và người dùng toàn cầu sẽ sử dụng ứng dụng này. Dịch vụ AWS nào giúp giảm độ trễ và cải thiện tốc độ truyền dữ liệu cho người dùng toàn cầu? (Chọn HAI đáp án.)
+Options:
+A. AWS Global Accelerator - Dịch vụ tăng tốc truy cập toàn cầu AWS Global Accelerator
+B. AWS Direct Connect - Dịch vụ kết nối trực tiếp AWS Direct Connect
+C. AWS Transit Gateway - Cổng kết nối trung chuyển AWS Transit Gateway
+D. AWS Snowcone - Thiết bị truyền dữ liệu biên AWS Snowcone
+E. Amazon CloudFront - Mạng phân phối nội dung Amazon CloudFront
+-> ??p ?n:
+AWS Global Accelerator & Amazon CloudFront
+-> Gi?i th?ch:
+Amazon CloudFront is a content delivery network (CDN) that caches content around the world for lower latency access. AWS Global Accelerator enables access to your application by leveraging the same Edge Locations as CloudFront and routing connections across the AWS global network.
+CloudFront phân phối/lưu vào bộ nhớ đệm nội dung qua mạng biên toàn cầu, còn Global Accelerator định tuyến lưu lượng qua mạng toàn cầu của AWS. Hai dịch vụ này giúp giảm độ trễ cho người dùng ở nhiều khu vực.
+Gi?i th?ch ??p ?n:
+A. CORRECT: Correct. "AWS Global Accelerator" is the correct answer. - ??NG: Đúng. "Dịch vụ tăng tốc truy cập toàn cầu AWS Global Accelerator" là đáp án đúng.
+B. INCORRECT: Incorrect. This service provides private connections from data centers to AWS. It is not useful for distributed users as they will not be able to take advantage of it. - SAI: Sai. Dịch vụ này cung cấp kết nối riêng từ trung tâm dữ liệu tới AWS. Dịch vụ này không hữu ích cho người dùng phân tán toàn cầu vì họ không thể tận dụng kết nối riêng đó.
+C. INCORRECT: Incorrect. This service is used for optimizing the network topology of interconnected VPCs and on-premises networks. - SAI: Sai. Dịch vụ này dùng để tối ưu cấu trúc mạng giữa các VPC và mạng tại chỗ được kết nối với nhau.
+D. INCORRECT: Incorrect. Snowcone is used as an edge device for transferring data. - SAI: Sai. Snowcone là thiết bị biên dùng để truyền/chuyển dữ liệu.
+E. CORRECT: Correct. "Amazon CloudFront" is the correct answer. - ??NG: Đúng. "Mạng phân phối nội dung Amazon CloudFront" là đáp án đúng.
+References:
+https://aws.amazon.com/global-accelerator/
+https://aws.amazon.com/cloudfront/
+
+Question 4:
+?? b?i:
+Which of the following deployments involves the reliability pillar of the AWS Well-Architected Framework?
+Triển khai nào sau đây liên quan đến trụ cột Reliability của AWS Well-Architected Framework?
+Options:
+A. Use CloudFormation to deploy infrastructure - Dùng CloudFormation để triển khai hạ tầng
+B. Amazon EBS provisioned IOPS volume - Volume Amazon EBS Provisioned IOPS
+C. Amazon RDS Multi-AZ deployment - Triển khai Amazon RDS Multi-AZ
+D. Attach a WebACL to a CloudFront distribution - Gắn WebACL vào bản phân phối CloudFront
+-> ??p ?n:
+Amazon RDS Multi-AZ deployment
+-> Gi?i th?ch:
+An Amazon Relational Database Service (RDS) deployment across multiple availability zones is a good example of using the reliability pillar of the AWS Well-Architected Framework. The specific design principle being followed here is “Automatically recover from failure”.
+RDS Multi-AZ giúp tự động khôi phục khi có lỗi bằng cách triển khai cơ sở dữ liệu qua nhiều Availability Zone, đúng với trụ cột Reliability.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. This would be an example of using the operational excellence pillar. - SAI: Sai. Đây là ví dụ thuộc trụ cột vận hành xuất sắc.
+B. INCORRECT: Incorrect. This would be an example of performance efficiency. - SAI: Sai. Đây là ví dụ thuộc trụ cột hiệu quả hiệu năng.
+C. CORRECT: Correct. "Amazon RDS Multi-AZ deployment" is the correct answer. - ??NG: Đúng. "Triển khai Amazon RDS Multi-AZ" là đáp án đúng.
+D. INCORRECT: Incorrect. This would be an example of using the security pillar. - SAI: Sai. Đây là ví dụ thuộc trụ cột bảo mật.
+References:
+https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
+
+Question 5:
+?? b?i:
+A company is deploying a MySQL database on AWS. The database must easily scale and have automatic backup enabled. Which AWS service should the company use?
+Một công ty triển khai cơ sở dữ liệu MySQL trên AWS. Cơ sở dữ liệu phải dễ mở rộng và có sao lưu tự động. Công ty nên dùng các dịch vụ AWS nào?
+Options:
+A. Amazon Athena - Dịch vụ truy vấn dữ liệu Amazon Athena
+B. Amazon DynamoDB - Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB
+C. Amazon Aurora - Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora
+D. Amazon DocumentDB - Dịch vụ cơ sở dữ liệu tài liệu Amazon DocumentDB
+-> ??p ?n:
+Amazon Aurora
+-> Gi?i th?ch:
+Amazon Aurora is a relational database that is compatible with MySQL and PostgreSQL database engines. Aurora is extremely fast and scales up to 128 TB. You can also deploy replicas for read scaling within and across Regions. Aurora also offers automated backups. Đáp án: Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora
+Amazon Aurora là cơ sở dữ liệu quan hệ tương thích với MySQL và PostgreSQL. Aurora có khả năng mở rộng tốt và hỗ trợ sao lưu tự động, nên phù hợp với yêu cầu của đề bài.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. Athena is used for querying data in Amazon S3 using SQL. - SAI: Sai. Athena dùng để truy vấn dữ liệu trong Amazon S3 bằng SQL.
+B. INCORRECT: Incorrect. DynamoDB is a NoSQL (non-relational) database and you cannot deploy a MySQL database as it is a relational database type. - SAI: Sai. DynamoDB là cơ sở dữ liệu NoSQL, không phải cơ sở dữ liệu quan hệ, nên không thể triển khai MySQL trên DynamoDB.
+C. CORRECT: Correct. "Amazon Aurora" is the correct answer. - ??NG: Đúng. "Dịch vụ cơ sở dữ liệu quan hệ Amazon Aurora" là đáp án đúng.
+D. INCORRECT: Incorrect. DocumentDB is a NoSQL database that supports document data structures. - SAI: Sai. DocumentDB là cơ sở dữ liệu NoSQL hỗ trợ cấu trúc dữ liệu dạng document.
+References:
+https://aws.amazon.com/rds/aurora/mysql-features/
+
+Question 6:
+?? b?i:
+A Cloud Practitioner anticipates an increase in application traffic at a future date and time when a sales event will take place. How can the Cloud Practitioner configure Amazon EC2 Auto Scaling to ensure the right number of Amazon EC2 instances are available ahead of the event?
+Một Cloud Practitioner dự đoán lưu lượng ứng dụng sẽ tăng vào một ngày/giờ cụ thể trong tương lai khi diễn ra sự kiện bán hàng. Nên cấu hình Amazon EC2 Auto Scaling thế nào để đảm bảo đủ EC2 instance trước sự kiện?
+Options:
+A. Configure a scheduled scaling policy - Cấu hình chính sách mở rộng theo lịch
+B. Configure predictive scaling - Cấu hình mở rộng dự đoán
+C. Configure a step scaling policy - Cấu hình chính sách mở rộng theo từng bước
+D. Configure a target tracking scaling policy - Cấu hình chính sách mở rộng theo dõi mục tiêu
+-> ??p ?n:
+Configure a scheduled scaling policy
+-> Gi?i th?ch:
+Scheduled scaling helps you to set up your own scaling schedule according to predictable load changes. For example, let's say that every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday. You can configure a schedule for Amazon EC2 Auto Scaling to increase capacity on Wednesday and decrease capacity on Friday.
+Scheduled scaling cho phép đặt lịch tăng/giảm dung lượng/năng lực xử lý theo thời điểm đã biết trước, phù hợp với sự kiện bán hàng có thời gian xác định.
+Gi?i th?ch ??p ?n:
+A. CORRECT: Correct. "Configure a scheduled scaling policy" is the correct answer. - ??NG: Đúng. "Cấu hình chính sách mở rộng theo lịch" là đáp án đúng.
+B. INCORRECT: Incorrect. Predictive scaling uses daily and weekly trends to determine when to scale. In this case the Cloud Practitioner knows about the event that will require more resources. - SAI: Sai. Predictive scaling dùng xu hướng theo ngày và theo tuần để xác định thời điểm mở rộng. Trong tình huống này, Cloud Practitioner đã biết trước sự kiện cần thêm tài nguyên.
+C. INCORRECT: Incorrect. Step scaling will launch resources in response to demand, this will not ensure the resource are ready at the right time as there will be a delay. - SAI: Sai. Step scaling khởi chạy tài nguyên để phản hồi nhu cầu, nhưng không đảm bảo tài nguyên đã sẵn sàng đúng thời điểm vì sẽ có độ trễ.
+D. INCORRECT: Incorrect. This policy will cause the ASG to attempt to keep resource utilization at the target value. - SAI: Sai. Chính sách này khiến Auto Scaling Group cố gắng duy trì mức sử dụng tài nguyên ở giá trị mục tiêu.
+References:
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html
+
+Question 7:
+?? b?i:
+A company is migrating a monolithic application that does not scale well into the cloud and refactoring it into a microservices architecture. Which best practice of the AWS Well-Architected Framework does this plan relate to?
+Một công ty di chuyển ứng dụng nguyên khối khó mở rộng lên đám mây và tái cấu trúc thành kiến trúc microdịch vụs. Kế hoạch này liên quan đến phương pháp thực hành tốt nhất nào của AWS Well-Architected Framework?
+Options:
+A. Manage change in automation - Quản lý thay đổi bằng tự động hóa
+B. Use multiple solutions to improve performance - Dùng nhiều giải pháp để cải thiện hiệu suất
+C. Implement loosely coupled services - Triển khai các dịch vụ liên kết lỏng lẻo
+D. Stop spending money on undifferentiated heavy lifting - Ngừng tốn công cho các công việc hạ tầng không tạo khác biệt
+-> ??p ?n:
+Implement loosely coupled services
+-> Gi?i th?ch:
+A microservices architecture will help ensure that each component of the application can scale independently and be updated independently. Loose coupling further assists as it places reduces the dependencies between systems and ensures that messages and data being passed between application components can be reliably and durably stored.
+Micro dịch vụ giúp các thành phần mở rộng và cập nhật độc lập. Đây là ví dụ của loose coupling, giảm phụ thuộc giữa các hệ thống.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. This is not the best practice being implemented by the company. - SAI: Sai. Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này.
+B. INCORRECT: Incorrect. This is not the best practice being implemented by the company. - SAI: Sai. Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này.
+C. CORRECT: Correct. "Implement loosely coupled services" is the correct answer. - ??NG: Đúng. "Triển khai các dịch vụ liên kết lỏng lẻo" là đáp án đúng.
+D. INCORRECT: Incorrect. This is not the best practice being implemented by the company. - SAI: Sai. Đây không phải phương pháp thực hành tốt nhất mà công ty đang áp dụng trong tình huống này.
+References:
+https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
+
+Question 8:
+?? b?i:
+A company is planning to deploy an application with a relational database on AWS. The application layer requires access to the database instance’s operating system in order to run scripts. The company prefer to keep management overhead to a minimum. Which deployment should be used for the database?
+Một công ty dự định triển khai ứng dụng có cơ sở dữ liệu quan hệ trên AWS. Tầng ứng dụng cần truy cập hệ điều hành của phiên bản cơ sở dữ liệu để chạy tập lệnh. Công ty muốn giảm tối đa công việc quản trị. Nên dùng cách triển khai nào cho cơ sở dữ liệu?
+Options:
+A. Amazon S3 - Dịch vụ lưu trữ đối tượng Amazon S3
+B. Amazon EC2 - Dịch vụ máy chủ ảo Amazon EC2
+C. Amazon DynamoDB - Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB
+D. Amazon RDS - Dịch vụ cơ sở dữ liệu quan hệ được quản lý Amazon RDS
+-> ??p ?n:
+Amazon EC2
+-> Gi?i th?ch:
+The company would like to keep management overhead to a minimum so RDS would be good to meet that requirement. However, with RDS you cannot access the operating system so the requirement for running scripts on the OS rules RDS out. Therefore, the next best solution is to deploy on an Amazon EC2 instances as the other options presented are unsuitable for a relational database.
+RDS giảm quản trị nhưng không cho truy cập hệ điều hành. Vì yêu cầu cần chạy tập lệnh trên OS, phương án phù hợp là tự triển khai cơ sở dữ liệu trên Amazon EC2.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. This is an object-storage system and is not suitable for running a relational database. - SAI: Sai. Đây là hệ thống lưu trữ object và không phù hợp để chạy cơ sở dữ liệu quan hệ.
+B. CORRECT: Correct. "Amazon EC2" is the correct answer. - ??NG: Đúng. "Dịch vụ máy chủ ảo Amazon EC2" là đáp án đúng.
+C. INCORRECT:  - SAI: 
+D. INCORRECT:  - SAI: 
+References:
+https://aws.amazon.com/rds/
+
+Question 9:
+?? b?i:
+A company is deploying a new workload and software licensing requirements dictate that the workload must be run on a specific, physical server. Which Amazon EC2 instance deployment option should be used?
+Một công ty triển khai khối lượng công việc mới và yêu cầu bản quyền phần mềm bắt buộc khối lượng công việc phải chạy trên một máy chủ vật lý cụ thể. Nên dùng tùy chọn triển khai EC2 nào?
+Options:
+A. Dedicated Instances - Phiên bản chuyên dụng Dedicated Instances
+B. Dedicated Hosts - Máy chủ chuyên dụng Dedicated Hosts
+C. Spot Instances - Phiên bản Spot Instances
+D. Reserved Instances - Phiên bản đặt trước Reserved Instances
+-> ??p ?n:
+Dedicated Hosts
+-> Gi?i th?ch:
+An Amazon EC2 Dedicated Host is a physical server fully dedicated for your use, so you can help address corporate compliance requirements. Amazon EC2 Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2, so that you get the flexibility and cost effectiveness of using your own licenses, but with the resiliency, simplicity and elasticity of AWS
+Dedicated Hosts cung cấp máy chủ vật lý dành riêng cho khách hàng và hỗ trợ yêu cầu giấy phép phần mềm cần gắn với máy chủ cụ thể.
+Gi?i th?ch ??p ?n:
+A. INCORRECT: Incorrect. With dedicated instances you are not given a specific physical server to run your instances on. - SAI: Sai. Với Dedicated Instances, bạn không được cấp một máy chủ vật lý cụ thể để chạy instance.
+B. CORRECT: Correct. "Dedicated Hosts" is the correct answer. - ??NG: Đúng. "Máy chủ chuyên dụng Dedicated Hosts" là đáp án đúng.
+C. INCORRECT: Incorrect. This deployment option does not provide a specific physical server. - SAI: Sai. Tùy chọn triển khai này không cung cấp một máy chủ vật lý cụ thể.
+D. INCORRECT: Incorrect. This deployment option does not provide a specific physical server. - SAI: Sai. Tùy chọn triển khai này không cung cấp một máy chủ vật lý cụ thể.
+References:
+https://aws.amazon.com/ec2/dedicated-hosts/
+
+Question 10:
+?? b?i:
+What are AWS Identity and Access Management (IAM) access keys used for?
+Access key của AWS Identity và Access Management (IAM) được dùng để làm gì?
+Options:
+A. Making programmatic calls to AWS from AWS APIs. - Thực hiện các lệnh gọi lập trình đến AWS thông qua AWS API.
+B. Ensuring the integrity of log files. - Đảm bảo tính toàn vẹn của log file.
+C. Logging in to the AWS Management Console. - Đăng nhập vào AWS Management Console.
+D. Enabling encryption in transit for web servers. - Bật mã hóa khi truyền dữ liệu cho web server.
+-> ??p ?n:
+Making programmatic calls to AWS from AWS APIs.
+-> Gi?i th?ch:
+Access keys are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK).
+Access key là thông tin xác thực dùng để ký các yêu cầu lập trình qua AWS CLI, AWS API hoặc SDK, không dùng để đăng nhập bảng điều khiển.
+Gi?i th?ch ??p ?n:
+A. CORRECT: Correct. "Making programmatic calls to AWS from AWS APIs." is the correct answer. - ??NG: Đúng. "Thực hiện các lệnh gọi lập trình đến AWS thông qua AWS API." là đáp án đúng.
+B. INCORRECT: Incorrect. This is not what access keys are used for. - SAI: Sai. Access key không được dùng cho mục đích này.
+C. INCORRECT: Incorrect. You use a user name and password for the management console. - SAI: Sai. Bạn dùng tên người dùng và mật khẩu để đăng nhập bảng điều khiển quản lý.
+D. INCORRECT: Incorrect. SSL/TLS certificates are used for creating encrypted channels using HTTPS. - SAI: Sai. Chứng chỉ SSL/TLS được dùng để tạo kênh mã hóa bằng HTTPS.
+References:
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html

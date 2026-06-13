@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Nếu sau này có file tạm/log
+*.log
+
+# Nếu có file backup local
+backup/
+temp/
