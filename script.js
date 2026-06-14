@@ -7,7 +7,10 @@ let userAnswers = []; // Biến quan trọng để lưu lịch sử làm bài
 let allQuestionsFlat = [];
 let questionBank = {};
 let showTranslation = false;
-const QUESTION_DATA_FILES = ['./data/aws_questions.json'];
+const QUESTION_DATA_FILES = [
+    './data/aws_de_01.json',
+    './data/aws_de_02.json'
+];
 const WRONG_STATS_KEY = 'wrongQuestionStats';
 const QUIZ_BATCH_SIZE_KEY = 'quizBatchSize';
 const SHUFFLE_OPTIONS_KEY = 'shuffleOptions';
@@ -395,8 +398,24 @@ function saveWrongStats(stats) {
     localStorage.setItem(WRONG_STATS_KEY, JSON.stringify(stats));
 }
 
+function getCurrentQuestionIdSet() {
+    const currentIds = new Set();
+
+    for (const [chapter, questions] of Object.entries(questionBank || {})) {
+        questions.forEach((question, index) => {
+            currentIds.add(withQuestionMeta(question, chapter, index).__id);
+        });
+    }
+
+    return currentIds;
+}
+
 function getWrongStatsList() {
-    return Object.values(readWrongStats()).sort((a, b) => {
+    const currentQuestionIds = getCurrentQuestionIdSet();
+
+    return Object.values(readWrongStats())
+    .filter(item => currentQuestionIds.has(item.id))
+    .sort((a, b) => {
         if (!!a.mastered !== !!b.mastered) return a.mastered ? 1 : -1;
         if (b.wrongCount !== a.wrongCount) return b.wrongCount - a.wrongCount;
         return (b.lastWrongAt || '').localeCompare(a.lastWrongAt || '');

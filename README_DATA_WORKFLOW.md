@@ -30,20 +30,20 @@ Or validate the test file:
 npm run validate:test
 ```
 
-## Merge Many Batches
+## Use Batches As Separate Exams
 
 ```bash
-node tools/merge_question_parts.js data/aws_questions.json data/aws_questions_part_001.json data/aws_questions_part_002.json
+node tools/validate_questions.js data/aws_de_01.json
+node tools/validate_questions.js data/aws_de_02.json
 ```
 
-The merge tool runs validation automatically after writing the output file.
-
-## Use The Merged File In The Web App
-
-After creating `data/aws_questions.json`, update the data file path in `script.js`:
+Each 25-question batch is loaded as a separate quiz card. Do not merge batches into one total file for the dashboard.
 
 ```js
-const QUESTION_DATA_FILES = ['./data/aws_questions.json'];
+const QUESTION_DATA_FILES = [
+    './data/aws_de_01.json',
+    './data/aws_de_02.json'
+];
 ```
 
 Then run the app with Live Server.

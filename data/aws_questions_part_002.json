@@ -1,0 +1,1582 @@
+{
+  "title": "AWS Practice Questions - Part 002",
+  "questions": [
+    {
+      "id": 26,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is planning to move a number of legacy applications to the AWS Cloud. The solution must be cost-effective. Which approach should the company take?",
+        "vi": "Một công ty dự định chuyển nhiều ứng dụng cũ lên AWS Cloud. Giải pháp phải tiết kiệm chi phí. Công ty nên chọn cách nào?"
+      },
+      "options": [
+        {
+          "en": "Rehost the applications on Amazon EC2 instances that are right-sized.",
+          "vi": "Chuyển nguyên trạng các ứng dụng lên Amazon EC2 instance được định cỡ phù hợp."
+        },
+        {
+          "en": "Migrate the applications to dedicated hosts on Amazon EC2.",
+          "vi": "Di chuyển ứng dụng sang Dedicated Host trên Amazon EC2."
+        },
+        {
+          "en": "Use an Amazon S3 static website to host the legacy application code.",
+          "vi": "Dùng website tĩnh Amazon S3 để lưu trữ mã ứng dụng cũ."
+        },
+        {
+          "en": "Use AWS Lambda to host the legacy applications in the cloud.",
+          "vi": "Dùng AWS Lambda để chạy các ứng dụng cũ trên cloud."
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "The most cost-effective solution that works is to use Amazon EC2 instances that are right-sized with the most optimum instance types. Right-sizing is the process of ensuring that the instance type selected for each application provides the right amount of resources for the application.",
+          "vi": "Chuyển nguyên trạng lên EC2 với kích thước instance phù hợp là cách khả thi và tiết kiệm cho nhiều ứng dụng cũ. Dedicated Host thường đắt, còn S3 chỉ phù hợp để lưu trữ nội dung tĩnh."
+        },
+        "full": {
+          "en": "The most cost-effective solution that works is to use Amazon EC2 instances that are right-sized with the most optimum instance types. Right-sizing is the process of ensuring that the instance type selected for each application provides the right amount of resources for the application.",
+          "vi": "Chuyển nguyên trạng lên EC2 với kích thước instance phù hợp là cách khả thi và tiết kiệm cho nhiều ứng dụng cũ. Dedicated Host thường đắt, còn S3 chỉ phù hợp để lưu trữ nội dung tĩnh."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. Rehost the applications on Amazon EC2 instances that are right-sized. is the correct answer.",
+          "vi": "Đúng. Chuyển nguyên trạng các ứng dụng lên Amazon EC2 instance được định cỡ phù hợp. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Dedicated hosts are expensive and there is no need to use them with this solution.",
+          "vi": "Sai. Dedicated Host có chi phí cao và không cần thiết trong giải pháp này."
+        },
+        {
+          "en": "Incorrect. You cannot host legacy application code in an S3 static website, only static content is possible.",
+          "vi": "Sai. Bạn không thể lưu trữ mã ứng dụng cũ trên website tĩnh Amazon S3; S3 static website chỉ phù hợp với nội dung tĩnh."
+        },
+        {
+          "en": "",
+          "vi": ""
+        }
+      ],
+      "refs": [
+        "https://d1.awsstatic.com/whitepapers/cost-optimization-right-sizing.pdf"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company runs a batch job on an Amazon EC2 instance and it takes 6 hours to complete. The workload is expected to double in volume each month with a proportional increase in processing time. What is the most efficient cloud architecture to address the growing workload?",
+        "vi": "Một công ty chạy tác vụ xử lý hàng loạt trên một EC2 instance và mất 6 giờ để hoàn thành. Khối lượng xử lý dự kiến tăng gấp đôi mỗi tháng, thời gian xử lý cũng tăng tương ứng. Kiến trúc đám mây nào hiệu quả nhất để xử lý khối lượng công việc tăng trưởng?"
+      },
+      "options": [
+        {
+          "en": "Change the Amazon EC2 volume type to a Provisioned IOPS SSD volume.",
+          "vi": "Đổi loại volume của Amazon EC2 sang Provisioned IOPS SSD."
+        },
+        {
+          "en": "Run the application on a bare metal Amazon EC2 instance.",
+          "vi": "Chạy ứng dụng trên EC2 bare metal instance."
+        },
+        {
+          "en": "Run the batch workload in parallel across multiple Amazon EC2 instances.",
+          "vi": "Chạy khối lượng xử lý hàng loạt song song trên nhiều EC2 instance."
+        },
+        {
+          "en": "Run the batch job on a larger Amazon EC2 instance type with more CPU.",
+          "vi": "Chạy batch job trên loại EC2 instance lớn hơn, có nhiều CPU hơn."
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "The most efficient option is to use multiple EC2 instances and distribute the workload across them. This is an example of horizontal scaling and will allow the workload to keep growing in size without any issue and without increasing the overall processing timeframe.",
+          "vi": "Chạy song song trên nhiều EC2 instance là mở rộng theo chiều ngang, giúp xử lý khối lượng tăng mà không kéo dài thời gian xử lý quá nhiều."
+        },
+        "full": {
+          "en": "The most efficient option is to use multiple EC2 instances and distribute the workload across them. This is an example of horizontal scaling and will allow the workload to keep growing in size without any issue and without increasing the overall processing timeframe.",
+          "vi": "Chạy song song trên nhiều EC2 instance là mở rộng theo chiều ngang, giúp xử lý khối lượng tăng mà không kéo dài thời gian xử lý quá nhiều."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This will improve the underlying performance of the EBS volume but does not assist with processing (more CPU is needed, i.e. by spreading across instances).",
+          "vi": "Sai. Điều này cải thiện hiệu suất của ổ đĩa EBS, nhưng không hỗ trợ xử lý tính toán; cần thêm CPU bằng cách phân tán xử lý qua nhiều instance."
+        },
+        {
+          "en": "Incorrect. Bare metal instances are used for workloads that require access to the hardware feature set (such as Intel VT-x), for applications that need to run in non-virtualized environments for licensing or support requirements, or for customers who wish to use their own hypervisor.",
+          "vi": "Sai. Lựa chọn này không phù hợp với yêu cầu của câu hỏi. Dịch vụ hoặc khái niệm này có mục đích sử dụng khác, không đáp ứng đúng tình huống đã nêu."
+        },
+        {
+          "en": "Correct. Run the batch workload in parallel across multiple Amazon EC2 instances. is the correct answer.",
+          "vi": "Đúng. Chạy khối lượng xử lý hàng loạt song song trên nhiều EC2 instance. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This may help initially but over time this will not scale well and the workload will take many days to complete.",
+          "vi": "Sai. Lựa chọn này không phù hợp với yêu cầu của câu hỏi. Dịch vụ hoặc khái niệm này có mục đích sử dụng khác, không đáp ứng đúng tình huống đã nêu."
+        }
+      ],
+      "refs": [
+        "https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.horizontal-scaling.en.html"
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "Monitoring and Logging",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company uses Amazon EC2 instances to run applications that are dedicated to different departments. The company needs to break out the costs of these applications and allocate them to the relevant department. The EC2 instances run in a single VPC How can the company achieve these requirements?",
+        "vi": "Một công ty dùng EC2 instance để chạy ứng dụng cho các phòng ban khác nhau và cần tách chi phí theo phòng ban. Các EC2 instance chạy trong một VPC. Công ty nên làm thế nào?"
+      },
+      "options": [
+        {
+          "en": "Add additional Amazon VPCs and launch each application in a separate VPC.",
+          "vi": "Tạo thêm Amazon VPC và chạy mỗi ứng dụng trong một VPC riêng."
+        },
+        {
+          "en": "Create tags by department on the instances and then run a cost allocation report.",
+          "vi": "Tạo tag theo phòng ban trên các instance, sau đó chạy báo cáo phân bổ chi phí."
+        },
+        {
+          "en": "Enable billing access for IAM users and view the costs in Cost Explorer.",
+          "vi": "Bật quyền truy cập thông tin thanh toán cho IAM user và xem chi phí trong Cost Explorer."
+        },
+        {
+          "en": "Enable billing alerts through Amazon CloudWatch and Amazon SNS.",
+          "vi": "Bật cảnh báo thanh toán qua Amazon CloudWatch và Amazon SNS."
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "The company should create cost allocation tags that specify the department and assign them to resources. These tags must be activated so they are visible in the cost allocation report. Once this is done and a monthly cost allocation report has been configured it will be easy to monitor the costs for each department.",
+          "vi": "Gắn cost allocation tag theo phòng ban rồi dùng cost allocation report/Cost Explorer để phân bổ chi phí theo tag."
+        },
+        "full": {
+          "en": "The company should create cost allocation tags that specify the department and assign them to resources. These tags must be activated so they are visible in the cost allocation report. Once this is done and a monthly cost allocation report has been configured it will be easy to monitor the costs for each department.",
+          "vi": "Gắn cost allocation tag theo phòng ban rồi dùng cost allocation report/Cost Explorer để phân bổ chi phí theo tag."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This will not help as billing is not broken out by VPC so they will not be able to determine the costs per department using this method.",
+          "vi": "Sai. Cách này không hiệu quả vì hóa đơn không được phân tách theo VPC, nên không xác định được chi phí theo phòng ban bằng phương pháp này."
+        },
+        {
+          "en": "Correct. Create tags by department on the instances and then run a cost allocation report. is the correct answer.",
+          "vi": "Đúng. Tạo tag theo phòng ban trên các instance, sau đó chạy báo cáo phân bổ chi phí. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Cost explorer will not show a breakdown of the costs by department.",
+          "vi": "Sai. Cost Explorer sẽ không tự hiển thị phân bổ chi phí theo phòng ban nếu không có thẻ phân bổ chi phí."
+        },
+        {
+          "en": "Incorrect. A billing alert simply lets you know you have reached a cost threshold.",
+          "vi": "Sai. Cảnh báo thanh toán chỉ cho biết bạn đã đạt đến một ngưỡng chi phí."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html"
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which AWS service or feature can assist with protecting a website that is hosted outside of AWS?",
+        "vi": "Dịch vụ hoặc tính năng AWS nào có thể giúp bảo vệ một website được lưu trữ bên ngoài AWS?"
+      },
+      "options": [
+        {
+          "en": "Amazon VPC route tables",
+          "vi": "Bảng định tuyến Amazon VPC"
+        },
+        {
+          "en": "Amazon VPC network ACLs",
+          "vi": "Danh sách kiểm soát truy cập mạng Amazon VPC"
+        },
+        {
+          "en": "AWS Web Application Firewall (WAF)",
+          "vi": "Tường lửa ứng dụng web AWS WAF"
+        },
+        {
+          "en": "Amazon EC2 security groups",
+          "vi": "Security group của Amazon EC2"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "AWS WAF can be used to protect on-premises resources if they are deployed behind an Application Load Balancer (ALB). In this scenario the on-premises website servers are added to a target group by IP address. The ALB has a WAF WebACL attached to it and distributes connections to the on-premises website.",
+          "vi": "AWS WAF có thể bảo vệ ứng dụng web trước các kiểu tấn công tầng ứng dụng, kể cả khi tài nguyên backend ở ngoài AWS nếu được đặt sau thành phần phù hợp như ALB."
+        },
+        "full": {
+          "en": "AWS WAF can be used to protect on-premises resources if they are deployed behind an Application Load Balancer (ALB). In this scenario the on-premises website servers are added to a target group by IP address. The ALB has a WAF WebACL attached to it and distributes connections to the on-premises website.",
+          "vi": "AWS WAF có thể bảo vệ ứng dụng web trước các kiểu tấn công tầng ứng dụng, kể cả khi tài nguyên backend ở ngoài AWS nếu được đặt sau thành phần phù hợp như ALB."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. A route table cannot be used for protecting resources running outside AWS.",
+          "vi": "Sai. Route table không thể dùng để bảo vệ tài nguyên chạy bên ngoài AWS."
+        },
+        {
+          "en": "Incorrect. Network ACLs only filter traffic entering and leaving a VPC subnet.",
+          "vi": "Sai. Network ACL chỉ lọc lưu lượng đi vào và đi ra khỏi subnet trong VPC."
+        },
+        {
+          "en": "Correct. AWS Web Application Firewall (WAF) is the correct answer.",
+          "vi": "Đúng. Tường lửa ứng dụng web AWS WAF là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Security groups can only be attached to EC2 instances.",
+          "vi": "Sai. Nhóm bảo mật chỉ có thể gắn với EC2 instance."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/waf/features/"
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "Compute",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "Which of the following AWS services are compute services? (Select TWO.)",
+        "vi": "Dịch vụ AWS nào sau đây là dịch vụ điện toán? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "AWS CloudTrail",
+          "vi": "Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail"
+        },
+        {
+          "en": "AWS Batch",
+          "vi": "Dịch vụ chạy tác vụ xử lý hàng loạt AWS Batch"
+        },
+        {
+          "en": "AWS Elastic Beanstalk",
+          "vi": "Dịch vụ triển khai và quản lý ứng dụng AWS Elastic Beanstalk"
+        },
+        {
+          "en": "Amazon Inspector",
+          "vi": "Dịch vụ kiểm tra và đánh giá bảo mật Amazon Inspector"
+        },
+        {
+          "en": "Amazon EFS",
+          "vi": "Dịch vụ hệ thống tệp đàn hồi Amazon EFS"
+        }
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explain": {
+        "short": {
+          "en": "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.",
+          "vi": "AWS Batch chạy các tác vụ xử lý hàng loạt; Elastic Beanstalk triển khai và mở rộng ứng dụng web. Đây là các dịch vụ thuộc nhóm điện toán."
+        },
+        "full": {
+          "en": "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.",
+          "vi": "AWS Batch chạy các tác vụ xử lý hàng loạt; Elastic Beanstalk triển khai và mở rộng ứng dụng web. Đây là các dịch vụ thuộc nhóm điện toán."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. CloudTrail is used for auditing.",
+          "vi": "Sai. CloudTrail được dùng để ghi nhận và kiểm tra hoạt động."
+        },
+        {
+          "en": "Correct. AWS Batch is the correct answer.",
+          "vi": "Đúng. Dịch vụ chạy tác vụ xử lý hàng loạt AWS Batch là đáp án đúng."
+        },
+        {
+          "en": "Correct. AWS Elastic Beanstalk is the correct answer.",
+          "vi": "Đúng. Dịch vụ triển khai và quản lý ứng dụng AWS Elastic Beanstalk là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS.",
+          "vi": "Sai. Amazon Inspector là dịch vụ đánh giá bảo mật tự động, giúp cải thiện bảo mật và tuân thủ cho ứng dụng triển khai trên AWS."
+        },
+        {
+          "en": "Incorrect. The Elastic File System (EFS) is used for storing data and is mounted by EC2 instances.",
+          "vi": "Sai. Elastic File System (EFS) dùng để lưu trữ dữ liệu và được gắn vào EC2 instance."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/batch/",
+        "https://aws.amazon.com/elasticbeanstalk/"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "When running applications in the AWS Cloud, which common tasks can AWS manage on behalf of their customers? (Select TWO.)",
+        "vi": "Khi chạy ứng dụng trên AWS Cloud, AWS có thể quản lý thay khách hàng những tác vụ phổ biến nào? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Application security testing",
+          "vi": "Kiểm thử bảo mật ứng dụng"
+        },
+        {
+          "en": "Taking a backup of a database",
+          "vi": "Sao lưu cơ sở dữ liệu"
+        },
+        {
+          "en": "Creating a database schema",
+          "vi": "Tạo schema cho cơ sở dữ liệu"
+        },
+        {
+          "en": "Application source code auditing",
+          "vi": "Kiểm tra mã nguồn ứng dụng"
+        },
+        {
+          "en": "Patching database software",
+          "vi": "Vá phần mềm cơ sở dữ liệu"
+        }
+      ],
+      "answer": [
+        4,
+        1
+      ],
+      "explain": {
+        "short": {
+          "en": "With AWS managed services you can reduce your time spent performing common IT tasks. With services such as Amazon RDS, AWS will patch the database host operating system and database software and perform patch management activities.",
+          "vi": "Với dịch vụ được quản lý như Amazon RDS, AWS có thể xử lý sao lưu và vá phần mềm cơ sở dữ liệu; khách hàng vẫn quản lý lược đồ cơ sở dữ liệu, mã nguồn và kiểm thử ứng dụng."
+        },
+        "full": {
+          "en": "With AWS managed services you can reduce your time spent performing common IT tasks. With services such as Amazon RDS, AWS will patch the database host operating system and database software and perform patch management activities.",
+          "vi": "Với dịch vụ được quản lý như Amazon RDS, AWS có thể xử lý sao lưu và vá phần mềm cơ sở dữ liệu; khách hàng vẫn quản lý lược đồ cơ sở dữ liệu, mã nguồn và kiểm thử ứng dụng."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. AWS does not perform any security testing of your applications.",
+          "vi": "Sai. AWS không thực hiện kiểm thử bảo mật cho ứng dụng của bạn."
+        },
+        {
+          "en": "Correct. Taking a backup of a database is the correct answer.",
+          "vi": "Đúng. Sao lưu cơ sở dữ liệu là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. AWS does not create your schema; this is something that’s in the customer’s control.",
+          "vi": "Sai. AWS không tạo lược đồ cơ sở dữ liệu cho bạn; việc này thuộc phạm vi kiểm soát của khách hàng."
+        },
+        {
+          "en": "",
+          "vi": ""
+        },
+        {
+          "en": "Correct. Patching database software is the correct answer.",
+          "vi": "Đúng. Vá phần mềm cơ sở dữ liệu là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/rds/"
+      ]
+    },
+    {
+      "id": 32,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Customers using AWS services must patch operating systems on which of the following services?",
+        "vi": "Khách hàng sử dụng các dịch vụ AWS phải tự vá hệ điều hành trên dịch vụ nào sau đây?"
+      },
+      "options": [
+        {
+          "en": "AWS Lambda",
+          "vi": "Dịch vụ chạy mã không cần quản lý máy chủ AWS Lambda"
+        },
+        {
+          "en": "Amazon EC2",
+          "vi": "Dịch vụ máy chủ ảo Amazon EC2"
+        },
+        {
+          "en": "Amazon DynamoDB",
+          "vi": "Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB"
+        },
+        {
+          "en": "AWS Fargate",
+          "vi": "Dịch vụ chạy container không cần quản lý máy chủ AWS Fargate"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "Amazon EC2 is an infrastructure as a service (IaaS) solution. This means the underlying hardware and software layer for running a virtual server are managed for you. As a customer you must then manage the operating system and any software you install. This includes installing patches on the operating system as part of regular maintenance activities.",
+          "vi": "Amazon EC2 là IaaS nên khách hàng quản lý hệ điều hành và phần mềm cài trên instance, bao gồm việc vá lỗi hệ điều hành."
+        },
+        "full": {
+          "en": "Amazon EC2 is an infrastructure as a service (IaaS) solution. This means the underlying hardware and software layer for running a virtual server are managed for you. As a customer you must then manage the operating system and any software you install. This includes installing patches on the operating system as part of regular maintenance activities.",
+          "vi": "Amazon EC2 là IaaS nên khách hàng quản lý hệ điều hành và phần mềm cài trên instance, bao gồm việc vá lỗi hệ điều hành."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This is a serverless service and you do not need to manage patches.",
+          "vi": "Sai. Đây là dịch vụ không máy chủ, nên bạn không cần quản lý bản vá."
+        },
+        {
+          "en": "Correct. Amazon EC2 is the correct answer.",
+          "vi": "Đúng. Dịch vụ máy chủ ảo Amazon EC2 là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This is a serverless service and you do not need to manage patches.",
+          "vi": "Sai. Đây là dịch vụ không máy chủ, nên bạn không cần quản lý bản vá."
+        },
+        {
+          "en": "Incorrect. This is a serverless service and you do not need to manage patches.",
+          "vi": "Sai. Đây là dịch vụ không máy chủ, nên bạn không cần quản lý bản vá."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/ec2/"
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "Well-Architected",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "A company is designing a new a service that must align with the operational excellence pillar of the AWS Well-Architected Framework. Which design principles should the company follow? (Select TWO.)",
+        "vi": "Một công ty thiết kế dịch vụ mới cần phù hợp với trụ cột Operational Excellence của AWS Well-Architected Framework. Công ty nên theo nguyên tắc thiết kế nào? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Anticipate failure.",
+          "vi": "Dự đoán trước lỗi có thể xảy ra."
+        },
+        {
+          "en": "Make large-scale changes.",
+          "vi": "Thực hiện thay đổi quy mô lớn."
+        },
+        {
+          "en": "Perform operations as code.",
+          "vi": "Thực hiện vận hành dưới dạng code."
+        },
+        {
+          "en": "Perform manual operations.",
+          "vi": "Vận hành thủ công."
+        },
+        {
+          "en": "Create static operational procedures.",
+          "vi": "Tạo quy trình vận hành cố định, không thay đổi."
+        }
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": {
+        "short": {
+          "en": "AWS Well-Architected helps cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications and workloads. There are 5 pillars and under the operational excellence pillar the following best practices are recommended:",
+          "vi": "Trụ cột Operational Excellence khuyến nghị vận hành dưới dạng mã, thực hiện thay đổi nhỏ và có thể đảo ngược, thường xuyên cải tiến quy trình và dự đoán lỗi."
+        },
+        "full": {
+          "en": "AWS Well-Architected helps cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications and workloads. There are 5 pillars and under the operational excellence pillar the following best practices are recommended:",
+          "vi": "Trụ cột Operational Excellence khuyến nghị vận hành dưới dạng mã, thực hiện thay đổi nhỏ và có thể đảo ngược, thường xuyên cải tiến quy trình và dự đoán lỗi."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. Anticipate failure. is the correct answer.",
+          "vi": "Đúng. Dự đoán trước lỗi có thể xảy ra. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This is not an operational best practice.",
+          "vi": "Sai. Đây không phải phương pháp vận hành tốt."
+        },
+        {
+          "en": "Correct. Perform operations as code. is the correct answer.",
+          "vi": "Đúng. Thực hiện vận hành dưới dạng code. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This is not an operational best practice.",
+          "vi": "Sai. Đây không phải phương pháp vận hành tốt."
+        },
+        {
+          "en": "Incorrect. This is not an operational best practice.",
+          "vi": "Sai. Đây không phải phương pháp vận hành tốt."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/architecture/well-architected/"
+      ]
+    },
+    {
+      "id": 34,
+      "topic": "Developer Tools",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which AWS service provides a managed software version control system?",
+        "vi": "Dịch vụ AWS nào cung cấp hệ thống quản lý phiên bản phần mềm được quản lý?"
+      },
+      "options": [
+        {
+          "en": "AWS CodePipeline",
+          "vi": "Dịch vụ tự động hóa quy trình phát hành phần mềm AWS CodePipeline"
+        },
+        {
+          "en": "AWS CodeCommit",
+          "vi": "Dịch vụ quản lý mã nguồn AWS CodeCommit"
+        },
+        {
+          "en": "AWS DataSync",
+          "vi": "Dịch vụ đồng bộ và di chuyển dữ liệu AWS DataSync"
+        },
+        {
+          "en": "Amazon CodeDeploy",
+          "vi": "Dịch vụ triển khai mã nguồn Amazon CodeDeploy"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "AWS CodeCommit is a fully-managed source control service that hosts secure Git-based repositories. It makes it easy for teams to collaborate on code in a secure and highly scalable ecosystem.",
+          "vi": "AWS CodeCommit là dịch vụ quản lý mã nguồn được quản lý, dùng để lưu trữ các kho Git an toàn và có khả năng mở rộng."
+        },
+        "full": {
+          "en": "AWS CodeCommit is a fully-managed source control service that hosts secure Git-based repositories. It makes it easy for teams to collaborate on code in a secure and highly scalable ecosystem.",
+          "vi": "AWS CodeCommit là dịch vụ quản lý mã nguồn được quản lý, dùng để lưu trữ các kho Git an toàn và có khả năng mở rộng."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. CodePipeline is a continuous delivery service that automates release pipelines for code. CodeCommit can be used in a pipeline.",
+          "vi": "Sai. CodePipeline là dịch vụ phân phối liên tục, tự động hóa quy trình phát hành mã. CodeCommit có thể được dùng trong pipeline."
+        },
+        {
+          "en": "Correct. AWS CodeCommit is the correct answer.",
+          "vi": "Đúng. Dịch vụ quản lý mã nguồn AWS CodeCommit là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. DataSync is used for replication and migrating data between storage systems and AWS.",
+          "vi": "Sai. DataSync dùng để sao chép và di chuyển dữ liệu giữa các hệ thống lưu trữ và AWS."
+        },
+        {
+          "en": "Incorrect. CodeDeploy is a deployment service that deploys your application onto infrastructure.",
+          "vi": "Sai. CodeDeploy là dịch vụ triển khai ứng dụng lên hạ tầng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/codecommit/"
+      ]
+    },
+    {
+      "id": 35,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is deploying an application on Amazon EC2 that requires low-latency access to application components in an on-premises data center. Which AWS service or resource can the company use to extend their existing VPC to the on-premises data center?",
+        "vi": "Một công ty triển khai ứng dụng trên Amazon EC2 cần truy cập độ trễ thấp tới các thành phần ứng dụng trong trung tâm dữ liệu tại chỗ. Dịch vụ/tài nguyên AWS nào có thể mở rộng VPC hiện có tới trung tâm dữ liệu tại chỗ?"
+      },
+      "options": [
+        {
+          "en": "Amazon Connect",
+          "vi": "Dịch vụ trung tâm liên hệ Amazon Connect"
+        },
+        {
+          "en": "AWS Direct Connect",
+          "vi": "Dịch vụ kết nối trực tiếp AWS Direct Connect"
+        },
+        {
+          "en": "Amazon Workspaces",
+          "vi": "Dịch vụ máy tính để bàn ảo Amazon WorkSpaces"
+        },
+        {
+          "en": "AWS Outposts",
+          "vi": "Dịch vụ mở rộng hạ tầng AWS xuống môi trường tại chỗ AWS Outposts"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. With AWS Outposts you can extend your VPC into the on-premises data center as in the following diagram:",
+          "vi": "AWS Outposts mang hạ tầng và các dịch vụ AWS tới cơ sở tại chỗ, cho phép mở rộng VPC vào trung tâm dữ liệu tại chỗ."
+        },
+        "full": {
+          "en": "AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. With AWS Outposts you can extend your VPC into the on-premises data center as in the following diagram:",
+          "vi": "AWS Outposts mang hạ tầng và các dịch vụ AWS tới cơ sở tại chỗ, cho phép mở rộng VPC vào trung tâm dữ liệu tại chỗ."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. Amazon Connect provides a seamless omnichannel experience through a single unified contact center for voice, chat, and task management.",
+          "vi": "Sai. Amazon Connect cung cấp trải nghiệm liên lạc đa kênh thông qua một trung tâm liên hệ hợp nhất cho thoại, chat và quản lý tác vụ."
+        },
+        {
+          "en": "Incorrect. Direct Connect is used for creating a low-latency private connection to an on-premises data center but it cannot be used to extend the VPC.",
+          "vi": "Sai. Direct Connect dùng để tạo kết nối riêng có độ trễ thấp tới trung tâm dữ liệu tại chỗ, nhưng không dùng để mở rộng VPC."
+        },
+        {
+          "en": "Incorrect. Amazon WorkSpaces is a managed, secure Desktop-as-a-Service (DaaS) solution.",
+          "vi": "Sai. Amazon WorkSpaces là giải pháp máy tính để bàn dưới dạng dịch vụ được quản lý và bảo mật."
+        },
+        {
+          "en": "Correct. AWS Outposts is the correct answer.",
+          "vi": "Đúng. Dịch vụ mở rộng hạ tầng AWS xuống môi trường tại chỗ AWS Outposts là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/outposts/"
+      ]
+    },
+    {
+      "id": 36,
+      "topic": "Monitoring and Logging",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "Which tasks require the use of the AWS account root user? (Select TWO.)",
+        "vi": "Tác vụ nào yêu cầu sử dụng AWS account root user? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Changing the account name.",
+          "vi": "Thay đổi tên tài khoản."
+        },
+        {
+          "en": "Viewing AWS CloudTrail logs.",
+          "vi": "Xem log AWS CloudTrail."
+        },
+        {
+          "en": "Enabling encryption for S3.",
+          "vi": "Bật mã hóa cho S3."
+        },
+        {
+          "en": "Changing AWS Support plans.",
+          "vi": "Thay đổi gói hỗ trợ AWS Support."
+        },
+        {
+          "en": "Changing payment currency.",
+          "vi": "Thay đổi đơn vị tiền tệ thanh toán."
+        }
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explain": {
+        "short": {
+          "en": "Some tasks can only be performed by the root user of an AWS account. This includes changing the account name and changing AWS support plans. For more information view the AWS article referenced below.",
+          "vi": "Một số tác vụ cấp tài khoản như đổi tên tài khoản và thay đổi Support plan yêu cầu root user; các tác vụ vận hành thông thường không cần root."
+        },
+        "full": {
+          "en": "Some tasks can only be performed by the root user of an AWS account. This includes changing the account name and changing AWS support plans. For more information view the AWS article referenced below.",
+          "vi": "Một số tác vụ cấp tài khoản như đổi tên tài khoản và thay đổi Support plan yêu cầu root user; các tác vụ vận hành thông thường không cần root."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. Changing the account name. is the correct answer.",
+          "vi": "Đúng. Thay đổi tên tài khoản. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This does not require root.",
+          "vi": "Sai. Tác vụ này không yêu cầu root user."
+        },
+        {
+          "en": "Incorrect. This does not require root.",
+          "vi": "Sai. Tác vụ này không yêu cầu root user."
+        },
+        {
+          "en": "Correct. Changing AWS Support plans. is the correct answer.",
+          "vi": "Đúng. Thay đổi gói hỗ trợ AWS Support. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This does not require root.",
+          "vi": "Sai. Tác vụ này không yêu cầu root user."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html"
+      ]
+    },
+    {
+      "id": 37,
+      "topic": "Application Integration",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is building a serverless workflow that coordinates multiple AWS services into a reliable application. They want a visual workflow that can track the status of each step in the application. Which AWS service would facilitate creating this kind of workflow?",
+        "vi": "Một công ty xây dựng quy trình serverless để phối hợp nhiều dịch vụ AWS thành một ứng dụng đáng tin cậy. Họ muốn có quy trình trực quan để theo dõi trạng thái từng bước. Dịch vụ AWS nào hỗ trợ tạo quy trình như vậy?"
+      },
+      "options": [
+        {
+          "en": "Amazon SNS",
+          "vi": "Dịch vụ thông báo Amazon SNS"
+        },
+        {
+          "en": "AWS Step Functions",
+          "vi": "Dịch vụ điều phối quy trình AWS Step Functions"
+        },
+        {
+          "en": "AWS Lambda",
+          "vi": "Dịch vụ chạy mã không cần quản lý máy chủ AWS Lambda"
+        },
+        {
+          "en": "Amazon SQS",
+          "vi": "Dịch vụ hàng đợi tin nhắn Amazon SQS"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "AWS Step Functions is the correct answer because it allows developers to coordinate multiple AWS services into serverless workflows. It provides a visual console to visualize the steps in the workflow, helping to build and update applications quickly and monitor the status of each step in the process.",
+          "vi": "AWS Step Functions điều phối multiple AWS services thành quy trình serverless và cung cấp giao diện trực quan để theo dõi từng bước."
+        },
+        "full": {
+          "en": "AWS Step Functions is the correct answer because it allows developers to coordinate multiple AWS services into serverless workflows. It provides a visual console to visualize the steps in the workflow, helping to build and update applications quickly and monitor the status of each step in the process.",
+          "vi": "AWS Step Functions điều phối multiple AWS services thành quy trình serverless và cung cấp giao diện trực quan để theo dõi từng bước."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. Amazon SNS (Simple Notification Service) is incorrect because it is primarily used for sending notifications and not for orchestrating workflows across multiple AWS services.",
+          "vi": "Sai. Amazon SNS chủ yếu dùng để gửi thông báo, không dùng để điều phối quy trình qua nhiều dịch vụ AWS."
+        },
+        {
+          "en": "Correct. AWS Step Functions is the correct answer.",
+          "vi": "Đúng. Dịch vụ điều phối quy trình AWS Step Functions là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. AWS Lambda is incorrect because, while it can run code in response to specific events, it doesn’t offer a direct way to visually orchestrate and coordinate workflows involving multiple AWS services.",
+          "vi": "Sai. AWS Lambda chạy mã theo sự kiện, nhưng không trực tiếp cung cấp cách trực quan để điều phối quy trình gồm nhiều dịch vụ AWS."
+        },
+        {
+          "en": "Incorrect. Amazon SQS (Simple Queue Service) is incorrect because, while it can be used to decouple cloud applications, it doesn't offer workflow orchestration with visual representation and tracking features.",
+          "vi": "Sai. Lựa chọn này không phù hợp với yêu cầu của câu hỏi. Dịch vụ hoặc khái niệm này có mục đích sử dụng khác, không đáp ứng đúng tình huống đã nêu."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/step-functions/features/"
+      ]
+    },
+    {
+      "id": 38,
+      "topic": "Developer Tools",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which AWS service can a team use to deploy infrastructure on AWS using familiar programming languages?",
+        "vi": "Dịch vụ AWS nào cho phép team triển khai hạ tầng AWS bằng các ngôn ngữ lập trình quen thuộc?"
+      },
+      "options": [
+        {
+          "en": "AWS CodeCommit",
+          "vi": "Dịch vụ quản lý mã nguồn AWS CodeCommit"
+        },
+        {
+          "en": "Amazon CodeGuru",
+          "vi": "Dịch vụ đánh giá mã và đưa ra khuyến nghị Amazon CodeGuru"
+        },
+        {
+          "en": "AWS Config",
+          "vi": "Dịch vụ theo dõi và đánh giá cấu hình tài nguyên AWS Config"
+        },
+        {
+          "en": "AWS Cloud Development Kit (AWS CDK)",
+          "vi": "Bộ công cụ phát triển đám mây AWS CDK"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "The AWS Cloud Development Kit (AWS CDK) is an open source software development framework to define cloud application resources using familiar programming languages. With AWS CDK you can stick to using programming languages that are familiar to you and have infrastructure deployed using AWS CloudFormation.",
+          "vi": "AWS CDK cho phép định nghĩa tài nguyên đám mây bằng ngôn ngữ lập trình quen thuộc và triển khai qua CloudFormation."
+        },
+        "full": {
+          "en": "The AWS Cloud Development Kit (AWS CDK) is an open source software development framework to define cloud application resources using familiar programming languages. With AWS CDK you can stick to using programming languages that are familiar to you and have infrastructure deployed using AWS CloudFormation.",
+          "vi": "AWS CDK cho phép định nghĩa tài nguyên đám mây bằng ngôn ngữ lập trình quen thuộc và triển khai qua CloudFormation."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. CodeCommit is a fully-managed source control service.",
+          "vi": "Sai. CodeCommit là dịch vụ quản lý mã nguồn được quản lý hoàn toàn."
+        },
+        {
+          "en": "Incorrect. CodeGuru is used to review code and provide intelligent recommendations for improvement.",
+          "vi": "Sai. CodeGuru dùng để đánh giá mã và đưa ra khuyến nghị cải thiện thông minh."
+        },
+        {
+          "en": "Incorrect. AWS Config is used for configuration compliance management.",
+          "vi": "Sai. AWS Config dùng để quản lý tuân thủ cấu hình."
+        },
+        {
+          "en": "Correct. AWS Cloud Development Kit (AWS CDK) is the correct answer.",
+          "vi": "Đúng. Bộ công cụ phát triển đám mây AWS CDK là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/cdk/"
+      ]
+    },
+    {
+      "id": 39,
+      "topic": "Trusted Advisor",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A user needs to identify underutilized Amazon EC2 instances to reduce costs. Which AWS service or feature will meet this requirement?",
+        "vi": "Người dùng cần xác định các Amazon EC2 instance đang sử dụng không hiệu quả để giảm chi phí. Dịch vụ hoặc tính năng nào đáp ứng yêu cầu này?"
+      },
+      "options": [
+        {
+          "en": "AWS Health Dashboard",
+          "vi": "Bảng điều khiển tình trạng các dịch vụ AWS"
+        },
+        {
+          "en": "AWS Trusted Advisor",
+          "vi": "Công cụ tư vấn tối ưu AWS Trusted Advisor"
+        },
+        {
+          "en": "AWS CodeBuild",
+          "vi": "Dịch vụ biên dịch và kiểm thử mã nguồn AWS CodeBuild"
+        },
+        {
+          "en": "AWS Cost Explorer",
+          "vi": "Công cụ phân tích chi phí AWS Cost Explorer"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "AWS Trusted Advisor offers a rich set of best practice checks and recommendations across five categories: cost optimization, security, fault tolerance, performance, and service limits.",
+          "vi": "AWS Trusted Advisor có kiểm tra các EC2 instance sử dụng thấp và đưa ra khuyến nghị tối ưu chi phí."
+        },
+        "full": {
+          "en": "AWS Trusted Advisor offers a rich set of best practice checks and recommendations across five categories: cost optimization, security, fault tolerance, performance, and service limits.",
+          "vi": "AWS Trusted Advisor có kiểm tra các EC2 instance sử dụng thấp và đưa ra khuyến nghị tối ưu chi phí."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This dashboard will not warn you about underutilization of resources.",
+          "vi": "Sai. Bảng điều khiển này không cảnh báo về tài nguyên bị sử dụng chưa hiệu quả."
+        },
+        {
+          "en": "Correct. AWS Trusted Advisor is the correct answer.",
+          "vi": "Đúng. Công cụ tư vấn tối ưu AWS Trusted Advisor là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. CodeBuild is used for compiling and testing code ahead of deployment.",
+          "vi": "Sai. CodeBuild dùng để biên dịch và kiểm thử mã trước khi triển khai."
+        },
+        {
+          "en": "Incorrect. Cost Explorer can be used to view itemized costs but you cannot check resource utilization.",
+          "vi": "Sai. Cost Explorer có thể dùng để xem chi phí chi tiết, nhưng không kiểm tra được mức sử dụng tài nguyên."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/"
+      ]
+    },
+    {
+      "id": 40,
+      "topic": "IAM",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "A company must provide access to AWS resources for their employees. Which security practices should they follow? (Select TWO.)",
+        "vi": "Một công ty cần cấp quyền truy cập tài nguyên AWS cho nhân viên. Nên áp dụng các thực hành bảo mật nào? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Enable multi-factor authentication for users.",
+          "vi": "Bật xác thực đa yếu tố cho người dùng."
+        },
+        {
+          "en": "Create IAM policies based on least privilege principles.",
+          "vi": "Tạo IAM policy theo nguyên tắc đặc quyền tối thiểu."
+        },
+        {
+          "en": "Create IAM Roles and apply them to IAM groups.",
+          "vi": "Tạo IAM Role và áp dụng chúng cho IAM group."
+        },
+        {
+          "en": "Disable password policies and management console access.",
+          "vi": "Tắt chính sách mật khẩu và quyền truy cập bảng điều khiển quản lý."
+        },
+        {
+          "en": "Create IAM users in different AWS Regions.",
+          "vi": "Tạo IAM user ở các AWS Region khác nhau."
+        }
+      ],
+      "answer": [
+        0,
+        1
+      ],
+      "explain": {
+        "short": {
+          "en": "There are a several security best practices for AWS IAM that are listed in the document shared below. Enabling multi-factor authentication is a best practice to require a second factor of authentication when logging in. Another best practice is to grant least privilege access when configuring users and password policies.",
+          "vi": "Phương pháp thực hành tốt nhất của IAM gồm bật MFA và cấp quyền theo nguyên tắc đặc quyền tối thiểu. IAM là dịch vụ global, role không được gắn trực tiếp cho group."
+        },
+        "full": {
+          "en": "There are a several security best practices for AWS IAM that are listed in the document shared below. Enabling multi-factor authentication is a best practice to require a second factor of authentication when logging in. Another best practice is to grant least privilege access when configuring users and password policies.",
+          "vi": "Phương pháp thực hành tốt nhất của IAM gồm bật MFA và cấp quyền theo nguyên tắc đặc quyền tối thiểu. IAM là dịch vụ global, role không được gắn trực tiếp cho group."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. Enable multi-factor authentication for users. is the correct answer.",
+          "vi": "Đúng. Bật xác thực đa yếu tố cho người dùng. là đáp án đúng."
+        },
+        {
+          "en": "Correct. Create IAM policies based on least privilege principles. is the correct answer.",
+          "vi": "Đúng. Tạo IAM policy theo nguyên tắc đặc quyền tối thiểu. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. You cannot apply roles to groups, you apply policies to groups.",
+          "vi": "Sai. Bạn không thể gán role cho group; bạn gán chính sách cho group."
+        },
+        {
+          "en": "Incorrect. This is not a security best practice. There is no need to disable management console access and password policies should be used.",
+          "vi": "Sai. Đây không phải phương pháp bảo mật tốt. Không cần tắt quyền truy cập bảng điều khiển quản lý, và nên sử dụng chính sách mật khẩu."
+        },
+        {
+          "en": "Incorrect. You cannot create IAM users in different Regions as the IAM service is a global service.",
+          "vi": "Sai. Bạn không thể tạo IAM user theo từng Region vì IAM là dịch vụ toàn cầu."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+      ]
+    },
+    {
+      "id": 41,
+      "topic": "Billing",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A Cloud Practitioner needs a tool that can assist with viewing and managing AWS costs and usage over time. Which tool should the Cloud Practitioner use?",
+        "vi": "Cloud Practitioner cần một công cụ hỗ trợ xem và quản lý chi phí, mức sử dụng AWS theo thời gian. Nên dùng công cụ nào?"
+      },
+      "options": [
+        {
+          "en": "AWS Organizations",
+          "vi": "Dịch vụ quản lý nhiều tài khoản AWS Organizations"
+        },
+        {
+          "en": "AWS Cost Explorer",
+          "vi": "Công cụ phân tích chi phí AWS Cost Explorer"
+        },
+        {
+          "en": "Amazon Inspector",
+          "vi": "Dịch vụ kiểm tra và đánh giá bảo mật Amazon Inspector"
+        },
+        {
+          "en": "AWS Budgets",
+          "vi": "Dịch vụ lập ngân sách và cảnh báo chi phí AWS Budgets"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "AWS Cost Explorer has an easy-to-use interface that lets you visualize, understand, and manage your AWS costs and usage over time. AWS Cost Explorer provides you with a set of default reports that you can use as the starting place for your analysis. From there, use the filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights.",
+          "vi": "AWS Cost Explorer giúp trực quan hóa, phân tích và quản lý chi phí cũng như mức sử dụng AWS theo thời gian."
+        },
+        "full": {
+          "en": "AWS Cost Explorer has an easy-to-use interface that lets you visualize, understand, and manage your AWS costs and usage over time. AWS Cost Explorer provides you with a set of default reports that you can use as the starting place for your analysis. From there, use the filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights.",
+          "vi": "AWS Cost Explorer giúp trực quan hóa, phân tích và quản lý chi phí cũng như mức sử dụng AWS theo thời gian."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. AWS Organizations allows you to organize accounts, create accounts programmatically, and leverage consolidated billing.",
+          "vi": "Sai. AWS Organizations cho phép tổ chức nhiều tài khoản, tạo tài khoản theo chương trình và sử dụng thanh toán hợp nhất."
+        },
+        {
+          "en": "Correct. AWS Cost Explorer is the correct answer.",
+          "vi": "Đúng. Công cụ phân tích chi phí AWS Cost Explorer là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS",
+          "vi": "Sai. Amazon Inspector là dịch vụ đánh giá bảo mật tự động, giúp cải thiện bảo mật và tuân thủ cho ứng dụng triển khai trên AWS."
+        },
+        {
+          "en": "Incorrect. AWS Budgets allows you to set custom budgets to track your cost and usage from the simplest to the most complex use cases.",
+          "vi": "Sai. AWS Budgets cho phép đặt ngân sách tùy chỉnh để theo dõi chi phí và mức sử dụng, nhưng không phải công cụ chính để xem và quản lý chi phí theo thời gian."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/"
+      ]
+    },
+    {
+      "id": 42,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company plans to deploy a relational database on AWS. The IT department will perform database administration. Which service should the company use?",
+        "vi": "Một công ty dự định triển khai cơ sở dữ liệu quan hệ trên AWS. Bộ phận IT sẽ tự thực hiện quản trị cơ sở dữ liệu. Công ty nên dùng dịch vụ nào?"
+      },
+      "options": [
+        {
+          "en": "Amazon Redshift",
+          "vi": "Dịch vụ kho dữ liệu Amazon Redshift"
+        },
+        {
+          "en": "Amazon ElastiCache",
+          "vi": "Dịch vụ bộ nhớ đệm Amazon ElastiCache"
+        },
+        {
+          "en": "Amazon DynamoDB",
+          "vi": "Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB"
+        },
+        {
+          "en": "Amazon EC2",
+          "vi": "Dịch vụ máy chủ ảo Amazon EC2"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "A self-managed relational database can be installed on Amazon EC2. When using this deployment you can choose the operating system and instance type that suits your needs and then install and manage any database software you require.",
+          "vi": "Nếu IT tự quản trị cơ sở dữ liệu, họ có thể cài và vận hành cơ sở dữ liệu quan hệ trên Amazon EC2 để kiểm soát hệ điều hành và phần mềm."
+        },
+        "full": {
+          "en": "A self-managed relational database can be installed on Amazon EC2. When using this deployment you can choose the operating system and instance type that suits your needs and then install and manage any database software you require.",
+          "vi": "Nếu IT tự quản trị cơ sở dữ liệu, họ có thể cài và vận hành cơ sở dữ liệu quan hệ trên Amazon EC2 để kiểm soát hệ điều hành và phần mềm."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. Redshift is managed data warehouse solution and is better suited to use cases where analytics of data is required.",
+          "vi": "Sai. Redshift là dịch vụ kho dữ liệu được quản lý, phù hợp hơn cho các trường hợp cần phân tích dữ liệu."
+        },
+        {
+          "en": "Incorrect. ElastiCache is a managed service for in-memory, high-performance caching of database content.",
+          "vi": "Sai. ElastiCache là dịch vụ bộ nhớ đệm hiệu năng cao trong bộ nhớ, dùng để lưu tạm nội dung cơ sở dữ liệu."
+        },
+        {
+          "en": "Incorrect. DynamoDB is a non-relational (NoSQL) type of database.",
+          "vi": "Sai. DynamoDB là cơ sở dữ liệu phi quan hệ thuộc nhóm NoSQL."
+        },
+        {
+          "en": "Correct. Amazon EC2 is the correct answer.",
+          "vi": "Đúng. Dịch vụ máy chủ ảo Amazon EC2 là đáp án đúng."
+        }
+      ],
+      "refs": []
+    },
+    {
+      "id": 43,
+      "topic": "Monitoring and Logging",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "Which AWS services can a company use to gather information about activity in their AWS account? (Select TWO.)",
+        "vi": "Công ty có thể dùng các dịch vụ AWS nào để thu thập thông tin về hoạt động trong tài khoản AWS? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "AWS CloudTrail",
+          "vi": "Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail"
+        },
+        {
+          "en": "Amazon CloudWatch",
+          "vi": "Dịch vụ giám sát Amazon CloudWatch"
+        },
+        {
+          "en": "Amazon Connect",
+          "vi": "Dịch vụ trung tâm liên hệ Amazon Connect"
+        },
+        {
+          "en": "AWS Trusted Advisor",
+          "vi": "Công cụ tư vấn tối ưu AWS Trusted Advisor"
+        },
+        {
+          "en": "Amazon CloudFront",
+          "vi": "Mạng phân phối nội dung Amazon CloudFront"
+        }
+      ],
+      "answer": [
+        0,
+        1
+      ],
+      "explain": {
+        "short": {
+          "en": "Amazon CloudWatch is a performance monitoring service. AWS services send metrics about their utilization to CloudWatch which collects the metrics. Additionally, CloudWatch collects metrics about account activity such as billing information which can also be viewed.",
+          "vi": "CloudTrail ghi lại hoạt động API trong tài khoản; CloudWatch thu thập metric/log và hỗ trợ giám sát hoạt động."
+        },
+        "full": {
+          "en": "Amazon CloudWatch is a performance monitoring service. AWS services send metrics about their utilization to CloudWatch which collects the metrics. Additionally, CloudWatch collects metrics about account activity such as billing information which can also be viewed.",
+          "vi": "CloudTrail ghi lại hoạt động API trong tài khoản; CloudWatch thu thập metric/log và hỗ trợ giám sát hoạt động."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. AWS CloudTrail is the correct answer.",
+          "vi": "Đúng. Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail là đáp án đúng."
+        },
+        {
+          "en": "Correct. Amazon CloudWatch is the correct answer.",
+          "vi": "Đúng. Dịch vụ giám sát Amazon CloudWatch là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This is a contact center service.",
+          "vi": "Sai. Đây là dịch vụ trung tâm liên hệ."
+        },
+        {
+          "en": "Incorrect. This service is used to assist with guidance on provisioning resources according to best practice.",
+          "vi": "Sai. Dịch vụ này hỗ trợ đưa ra khuyến nghị về cách cấp phát tài nguyên theo phương pháp thực hành tốt nhất."
+        },
+        {
+          "en": "Incorrect. CloudFront is a content delivery network (CDN).",
+          "vi": "Sai. CloudFront là mạng phân phối nội dung (CDN)."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/cloudwatch/",
+        "https://aws.amazon.com/cloudtrail/"
+      ]
+    },
+    {
+      "id": 44,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which resource should a new user on AWS use to get help with deploying popular technologies based on AWS best practices, including architecture and deployment instructions?",
+        "vi": "Người dùng mới trên AWS nên dùng tài nguyên nào để được hỗ trợ triển khai các công nghệ phổ biến theo phương pháp thực hành tốt nhất AWS, bao gồm kiến trúc và hướng dẫn triển khai?"
+      },
+      "options": [
+        {
+          "en": "AWS CloudFormation",
+          "vi": "AWS CloudFormation"
+        },
+        {
+          "en": "AWS Artifact",
+          "vi": "AWS Artifact"
+        },
+        {
+          "en": "AWS Config",
+          "vi": "AWS Config"
+        },
+        {
+          "en": "AWS Partner Solutions",
+          "vi": "AWS Partner Solutions"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "Partner Solutions are built by Amazon Web Services (AWS) solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability. These accelerators reduce hundreds of manual procedures into just a few steps, so you can build your production environment quickly and start using it immediately.",
+          "vi": "AWS Partner Solutions cung cấp kiến trúc tham khảo, mẫu CloudFormation và hướng dẫn triển khai theo phương pháp thực hành tốt nhất."
+        },
+        "full": {
+          "en": "Partner Solutions are built by Amazon Web Services (AWS) solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability. These accelerators reduce hundreds of manual procedures into just a few steps, so you can build your production environment quickly and start using it immediately.",
+          "vi": "AWS Partner Solutions cung cấp kiến trúc tham khảo, mẫu CloudFormation và hướng dẫn triển khai theo phương pháp thực hành tốt nhất."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. CloudFormation is used to deploy infrastructure from templates, the Partner Solutions use CloudFormation.",
+          "vi": "Sai. CloudFormation dùng để triển khai hạ tầng từ mẫu; AWS Partner Solutions sử dụng CloudFormation."
+        },
+        {
+          "en": "Incorrect. Artifact provides on-demand access to AWS security and compliance reports.",
+          "vi": "Sai. Artifact cung cấp quyền truy cập theo yêu cầu vào các báo cáo bảo mật và tuân thủ của AWS."
+        },
+        {
+          "en": "Incorrect. Config is a service used for compliance relating the configuration of AWS resources.",
+          "vi": "Sai. Config là dịch vụ dùng để theo dõi tuân thủ liên quan đến cấu hình tài nguyên AWS."
+        },
+        {
+          "en": "Correct. AWS Partner Solutions is the correct answer.",
+          "vi": "Đúng. AWS Partner Solutions là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/quickstart/"
+      ]
+    },
+    {
+      "id": 45,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "Which AWS feature can be used to launch a pre-configured Amazon Elastic Compute Cloud (EC2) instance?",
+        "vi": "Tính năng AWS nào được dùng để khởi chạy một Amazon EC2 instance đã được cấu hình sẵn?"
+      },
+      "options": [
+        {
+          "en": "Amazon EC2 Systems Manager",
+          "vi": "Amazon EC2 Systems Manager"
+        },
+        {
+          "en": "Amazon Machine Image (AMI)",
+          "vi": "Ảnh máy Amazon AMI"
+        },
+        {
+          "en": "Amazon AppStream 2.0",
+          "vi": "Dịch vụ truyền phát ứng dụng và desktop Amazon AppStream 2.0"
+        },
+        {
+          "en": "Amazon Elastic Block Store (EBS)",
+          "vi": "Dịch vụ lưu trữ khối Amazon EBS"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations.",
+          "vi": "AMI chứa thông tin cần thiết để khởi chạy EC2 instance, bao gồm hệ điều hành và cấu hình ban đầu."
+        },
+        "full": {
+          "en": "An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations.",
+          "vi": "AMI chứa thông tin cần thiết để khởi chạy EC2 instance, bao gồm hệ điều hành và cấu hình ban đầu."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect.. AWS Systems Manager gives you visibility and control of your infrastructure on AWS.",
+          "vi": "Sai. AWS Systems Manager cung cấp khả năng quan sát và kiểm soát hạ tầng trên AWS, không phải tính năng dùng để khởi chạy EC2 instance đã cấu hình sẵn."
+        },
+        {
+          "en": "Correct. Amazon Machine Image (AMI) is the correct answer.",
+          "vi": "Đúng. Ảnh máy Amazon AMI là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Amazon AppStream 2.0 is a fully managed non-persistent application and desktop streaming service.",
+          "vi": "Sai. Amazon AppStream 2.0 là dịch vụ truyền phát ứng dụng và desktop không lưu trạng thái, được quản lý hoàn toàn."
+        },
+        {
+          "en": "Incorrect. EBS is block-based storage for EC2.",
+          "vi": "Sai. EBS là dịch vụ lưu trữ khối cho EC2."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
+      ]
+    },
+    {
+      "id": 46,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A Cloud Practitioner is developing a new application and wishes to integrate features of AWS services directly into the application. Which of the following is the BEST tool for this purpose?",
+        "vi": "Một Cloud Practitioner đang phát triển ứng dụng mới và muốn tích hợp trực tiếp tính năng của các dịch vụ AWS vào ứng dụng. Công cụ nào là phù hợp nhất?"
+      },
+      "options": [
+        {
+          "en": "AWS Command Line Interface (CLI)",
+          "vi": "Giao diện dòng lệnh AWS CLI"
+        },
+        {
+          "en": "AWS CodeDeploy",
+          "vi": "Dịch vụ triển khai mã nguồn AWS CodeDeploy"
+        },
+        {
+          "en": "AWS Software Development Kit",
+          "vi": "Bộ công cụ phát triển phần mềm AWS SDK"
+        },
+        {
+          "en": "AWS CodePipeline",
+          "vi": "Dịch vụ tự động hóa quy trình phát hành phần mềm AWS CodePipeline"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "short": {
+          "en": "A software development kit (SDK) is a collection of software development tools in one installable package. AWS provides SDKs for various programming languages and these can be used for integrating the features of AWS services directly into an application.",
+          "vi": "AWS SDK cung cấp thư viện/công cụ cho nhiều ngôn ngữ lập trình để gọi trực tiếp các dịch vụ AWS từ ứng dụng."
+        },
+        "full": {
+          "en": "A software development kit (SDK) is a collection of software development tools in one installable package. AWS provides SDKs for various programming languages and these can be used for integrating the features of AWS services directly into an application.",
+          "vi": "AWS SDK cung cấp thư viện/công cụ cho nhiều ngôn ngữ lập trình để gọi trực tiếp các dịch vụ AWS từ ứng dụng."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. The AWS CLI is used for running commands but is not the best tool for integrating features of AWS services directly into an application.",
+          "vi": "Sai. AWS CLI dùng để chạy lệnh, nhưng không phải công cụ phù hợp nhất để tích hợp trực tiếp tính năng của các dịch vụ AWS vào ứng dụng."
+        },
+        {
+          "en": "Incorrect. CodeDeploy is used for deploying code from a code repository and actually installing the application.",
+          "vi": "Sai. CodeDeploy dùng để triển khai mã từ kho mã nguồn và cài đặt ứng dụng."
+        },
+        {
+          "en": "Correct. AWS Software Development Kit is the correct answer.",
+          "vi": "Đúng. Bộ công cụ phát triển phần mềm AWS SDK là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. CodePipeline is used for automating the code release lifecycle.",
+          "vi": "Sai. CodePipeline dùng để tự động hóa vòng đời phát hành mã."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/tools/"
+      ]
+    },
+    {
+      "id": 47,
+      "topic": "S3",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "How much data can a company store in the Amazon S3 service?",
+        "vi": "Một công ty có thể lưu trữ bao nhiêu dữ liệu trong Amazon S3?"
+      },
+      "options": [
+        {
+          "en": "Virtually unlimited",
+          "vi": "Gần như không giới hạn"
+        },
+        {
+          "en": "100 PB",
+          "vi": "100 PB"
+        },
+        {
+          "en": "1 PB",
+          "vi": "1 PB"
+        },
+        {
+          "en": "100 TB",
+          "vi": "100 TB"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "short": {
+          "en": "The Amazon Simple Storage Service (S3) offers virtually unlimited storage. The total volume of data and number of objects you can store are unlimited. Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 terabytes. The largest object that can be uploaded in a single PUT is 5 gigabytes.",
+          "vi": "Amazon S3 cung cấp dung lượng lưu trữ gần như không giới hạn về tổng số dữ liệu và số lượng object."
+        },
+        "full": {
+          "en": "The Amazon Simple Storage Service (S3) offers virtually unlimited storage. The total volume of data and number of objects you can store are unlimited. Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 terabytes. The largest object that can be uploaded in a single PUT is 5 gigabytes.",
+          "vi": "Amazon S3 cung cấp dung lượng lưu trữ gần như không giới hạn về tổng số dữ liệu và số lượng object."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Correct. Virtually unlimited is the correct answer.",
+          "vi": "Đúng. Gần như không giới hạn là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. There is no such limit.",
+          "vi": "Sai. Không có giới hạn như vậy."
+        },
+        {
+          "en": "Incorrect. There is no such limit.",
+          "vi": "Sai. Không có giới hạn như vậy."
+        },
+        {
+          "en": "Incorrect. There is no such limit.",
+          "vi": "Sai. Không có giới hạn như vậy."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/s3/faqs/"
+      ]
+    },
+    {
+      "id": 48,
+      "topic": "Networking",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "An Amazon Virtual Private Cloud (VPC) can include multiple:",
+        "vi": "Một Amazon Virtual Private Cloud (VPC) có thể bao gồm nhiều gì?"
+      },
+      "options": [
+        {
+          "en": "Internet gateways.",
+          "vi": "Internet gateway"
+        },
+        {
+          "en": "Edge locations.",
+          "vi": "Edge location"
+        },
+        {
+          "en": "AWS Regions.",
+          "vi": "AWS Region"
+        },
+        {
+          "en": "Availability Zones.",
+          "vi": "Availability Zone"
+        }
+      ],
+      "answer": 3,
+      "explain": {
+        "short": {
+          "en": "An Amazon VPC includes multiple Availability Zones. Within a VPC you can create subnets in each AZ that is available in the Region and distribute your resources across these subnets for high availability.",
+          "vi": "Một VPC thuộc một Region nhưng có thể trải rộng qua nhiều Availability Zone trong Region đó."
+        },
+        "full": {
+          "en": "An Amazon VPC includes multiple Availability Zones. Within a VPC you can create subnets in each AZ that is available in the Region and distribute your resources across these subnets for high availability.",
+          "vi": "Một VPC thuộc một Region nhưng có thể trải rộng qua nhiều Availability Zone trong Region đó."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. You can only attach one Internet gateway to each VPC.",
+          "vi": "Sai. Bạn chỉ có thể gắn một Internet Gateway cho mỗi VPC."
+        },
+        {
+          "en": "Incorrect. A VPC cannot include multiple Edge locations as these are independent of the Regions in which a VPC is created.",
+          "vi": "Sai. Một VPC không thể bao gồm nhiều Edge Location vì Edge Location độc lập với Region nơi VPC được tạo."
+        },
+        {
+          "en": "Incorrect. A VPC cannot include multiple Regions.",
+          "vi": "Sai. Một VPC không thể bao gồm nhiều Region."
+        },
+        {
+          "en": "Correct. Availability Zones. is the correct answer.",
+          "vi": "Đúng. Availability Zone là đáp án đúng."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/vpc"
+      ]
+    },
+    {
+      "id": 49,
+      "topic": "EC2",
+      "level": "basic",
+      "type": "single",
+      "q": {
+        "en": "A company is launching a new website which is expected to have highly variable levels of traffic. The website will run on Amazon EC2 and must be highly available. What is the MOST cost-effective approach?",
+        "vi": "Một công ty ra mắt website mới dự kiến có lưu lượng biến động mạnh. Website chạy trên Amazon EC2 và phải có tính sẵn sàng cao. Cách tiếp cận nào tiết kiệm chi phí nhất?"
+      },
+      "options": [
+        {
+          "en": "Use the AWS CLI to launch and terminate Amazon EC2 instances to match demand.",
+          "vi": "Dùng AWS CLI để tự khởi chạy và dừng EC2 instance theo nhu cầu."
+        },
+        {
+          "en": "Create an Amazon EC2 Auto Scaling group and configure an Elastic Load Balancer.",
+          "vi": "Tạo EC2 Auto Scaling group và cấu hình Elastic Load Balancer."
+        },
+        {
+          "en": "Launch the website using an Amazon EC2 instance running on a dedicated host.",
+          "vi": "Chạy website trên EC2 instance dùng dedicated host."
+        },
+        {
+          "en": "Determine the highest expected traffic and use an appropriate instance type.",
+          "vi": "Xác định lưu lượng cao nhất và chọn instance type phù hợp."
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "short": {
+          "en": "The most cost-effective approach for ensuring the website is highly available on Amazon EC2 instances is to use an Amazon EC2 Auto Scaling group. This will ensure that the appropriate number of instances is always available to service the demand. An Elastic Load Balancer can be placed in front of the instances to distribute incoming connections.",
+          "vi": "Auto Scaling tự tăng/giảm số instance theo nhu cầu, còn ELB phân phối lưu lượng truy cập, giúp vừa sẵn sàng cao vừa tối ưu chi phí."
+        },
+        "full": {
+          "en": "The most cost-effective approach for ensuring the website is highly available on Amazon EC2 instances is to use an Amazon EC2 Auto Scaling group. This will ensure that the appropriate number of instances is always available to service the demand. An Elastic Load Balancer can be placed in front of the instances to distribute incoming connections.",
+          "vi": "Auto Scaling tự tăng/giảm số instance theo nhu cầu, còn ELB phân phối lưu lượng truy cập, giúp vừa sẵn sàng cao vừa tối ưu chi phí."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This is a manual approach and would not be recommended.",
+          "vi": "Sai. Đây là cách làm thủ công và không được khuyến nghị."
+        },
+        {
+          "en": "Correct. Create an Amazon EC2 Auto Scaling group and configure an Elastic Load Balancer. is the correct answer.",
+          "vi": "Đúng. Tạo EC2 Auto Scaling group và cấu hình Elastic Load Balancer. là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. This is an expensive solution as dedicated hosts are very costly and should only be used when physical isolation of resources or host visibility is required.",
+          "vi": "Sai. Lựa chọn này không phù hợp với yêu cầu của câu hỏi. Dịch vụ hoặc khái niệm này có mục đích sử dụng khác, không đáp ứng đúng tình huống đã nêu."
+        },
+        {
+          "en": "Incorrect. This approach will result in the company overpaying when the demand is low.",
+          "vi": "Sai. Cách này sẽ khiến công ty trả quá nhiều chi phí khi nhu cầu thấp."
+        }
+      ],
+      "refs": [
+        "https://aws.amazon.com/ec2/autoscaling/"
+      ]
+    },
+    {
+      "id": 50,
+      "topic": "AWS",
+      "level": "basic",
+      "type": "multiple",
+      "q": {
+        "en": "How does the AWS cloud increase the speed and agility of execution for customers? (Select TWO.)",
+        "vi": "AWS Cloud tăng tốc độ và sự linh hoạt trong triển khai cho khách hàng như thế nào? (Chọn HAI đáp án.)"
+      },
+      "options": [
+        {
+          "en": "Lower cost of deployment",
+          "vi": "Chi phí triển khai thấp hơn"
+        },
+        {
+          "en": "Private connections to data centers",
+          "vi": "Kết nối riêng tới trung tâm dữ liệu"
+        },
+        {
+          "en": "Fast provisioning of resources",
+          "vi": "Cấp phát tài nguyên nhanh"
+        },
+        {
+          "en": "Scalable compute capacity",
+          "vi": "Năng lực điện toán có thể mở rộng"
+        },
+        {
+          "en": "Secured data centers",
+          "vi": "Trung tâm dữ liệu được bảo mật"
+        }
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explain": {
+        "short": {
+          "en": "The ability to quickly provision resources on AWS is a good example of speed and agility. On AWS the resources are readily available and can be deployed extremely quickly. Scalable compute capacity is another example as it gives you the agility to easily reconfigure your resources with more or less capacity as is required.",
+          "vi": "AWS cho phép tạo tài nguyên nhanh và mở rộng hoặc thu hẹp năng lực điện toán dễ dàng, từ đó tăng tốc độ triển khai và sự linh hoạt."
+        },
+        "full": {
+          "en": "The ability to quickly provision resources on AWS is a good example of speed and agility. On AWS the resources are readily available and can be deployed extremely quickly. Scalable compute capacity is another example as it gives you the agility to easily reconfigure your resources with more or less capacity as is required.",
+          "vi": "AWS cho phép tạo tài nguyên nhanh và mở rộng hoặc thu hẹp năng lực điện toán dễ dàng, từ đó tăng tốc độ triển khai và sự linh hoạt."
+        }
+      },
+      "wrongExplain": [
+        {
+          "en": "Incorrect. This is not an example of speed and agility.",
+          "vi": "Sai. Đây không phải ví dụ về tốc độ và sự linh hoạt."
+        },
+        {
+          "en": "Incorrect. A private connection to a data center is not an example of speed and agility.",
+          "vi": "Sai. Kết nối riêng tới trung tâm dữ liệu không phải ví dụ về tốc độ và sự linh hoạt."
+        },
+        {
+          "en": "Correct. Fast provisioning of resources is the correct answer.",
+          "vi": "Đúng. Cấp phát tài nguyên nhanh là đáp án đúng."
+        },
+        {
+          "en": "Correct. Scalable compute capacity is the correct answer.",
+          "vi": "Đúng. Năng lực điện toán có thể mở rộng là đáp án đúng."
+        },
+        {
+          "en": "Incorrect. Secured data centers are not an example of speed and agility.",
+          "vi": "Sai. Trung tâm dữ liệu được bảo mật không phải ví dụ về tốc độ và sự linh hoạt."
+        }
+      ],
+      "refs": [
+        "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+      ]
+    }
+  ]
+}
